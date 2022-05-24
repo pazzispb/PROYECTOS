@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "dfdd1d36-d503-4f9d-8cac-e3dd1d6f39af": {
+      "ProjectGuid": "dfdd1d36-d503-4f9d-8cac-e3dd1d6f39af",
+      "DisplayName": "CRUD_CEDULA",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
