@@ -17,5 +17,7 @@ namespace CRUD_CEDULA
         {
             InitializeComponent();
         }
+
+        
     }
 }

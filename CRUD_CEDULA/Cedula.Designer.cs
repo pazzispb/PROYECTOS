@@ -29,50 +29,53 @@
         private void InitializeComponent()
         {
             this.Titulo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.mtxtCedula = new System.Windows.Forms.MaskedTextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.rdbFemenino = new System.Windows.Forms.RadioButton();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtLugarNacimiento = new System.Windows.Forms.TextBox();
+            this.txtSector = new System.Windows.Forms.TextBox();
+            this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.lbNombres = new System.Windows.Forms.Label();
             this.lbApellidos = new System.Windows.Forms.Label();
             this.lbCedula = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbSangre = new System.Windows.Forms.Label();
+            this.lbNacionalidad = new System.Windows.Forms.Label();
             this.lbFechaNacimiento = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dtpFechaExpiracion = new System.Windows.Forms.DateTimePicker();
+            this.lbCodigoPostal = new System.Windows.Forms.Label();
+            this.txtCodigoPostal = new System.Windows.Forms.TextBox();
+            this.lbRegistroNacimiento = new System.Windows.Forms.Label();
+            this.txtRegistroNacimiento = new System.Windows.Forms.TextBox();
+            this.lbMunicipio = new System.Windows.Forms.Label();
+            this.txtMunicipio = new System.Windows.Forms.TextBox();
+            this.lbSector = new System.Windows.Forms.Label();
+            this.lbDireccionResidencia = new System.Windows.Forms.Label();
+            this.txtDireccionResidencia = new System.Windows.Forms.TextBox();
+            this.lbColegioElectoral = new System.Windows.Forms.Label();
+            this.txtColegioElectoral = new System.Windows.Forms.TextBox();
+            this.lbUbicacionColegio = new System.Windows.Forms.Label();
+            this.txtUbicacionColegio = new System.Windows.Forms.TextBox();
+            this.lbFechaExpiracion = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.lbEstadoCivil = new System.Windows.Forms.Label();
+            this.cbSangre = new System.Windows.Forms.ComboBox();
+            this.lbSexo = new System.Windows.Forms.Label();
             this.lbLugarNacimiento = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.dgvCiudadanos = new System.Windows.Forms.DataGridView();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.btnBuscarFoto = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.lbCedulaAnterior = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiudadanos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // Titulo
@@ -82,92 +85,82 @@
             this.Titulo.Location = new System.Drawing.Point(0, 0);
             this.Titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(999, 39);
+            this.Titulo.Size = new System.Drawing.Size(1003, 39);
             this.Titulo.TabIndex = 0;
             this.Titulo.Text = "Registro de Ciudadano";
             this.Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtNombres
             // 
-            this.textBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(102, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(217, 25);
-            this.textBox1.TabIndex = 1;
+            this.txtNombres.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombres.Location = new System.Drawing.Point(102, 32);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(217, 25);
+            this.txtNombres.TabIndex = 1;
             // 
             // mtxtCedula
             // 
             this.mtxtCedula.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtCedula.Location = new System.Drawing.Point(777, 32);
-            this.mtxtCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtxtCedula.Location = new System.Drawing.Point(140, 81);
+            this.mtxtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.mtxtCedula.Name = "mtxtCedula";
-            this.mtxtCedula.Size = new System.Drawing.Size(167, 25);
+            this.mtxtCedula.Size = new System.Drawing.Size(179, 25);
             this.mtxtCedula.TabIndex = 2;
             // 
-            // radioButton1
+            // rdbFemenino
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(168, 120);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(89, 22);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Femenino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbFemenino.AutoSize = true;
+            this.rdbFemenino.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbFemenino.Location = new System.Drawing.Point(186, 165);
+            this.rdbFemenino.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbFemenino.Name = "rdbFemenino";
+            this.rdbFemenino.Size = new System.Drawing.Size(89, 22);
+            this.rdbFemenino.TabIndex = 3;
+            this.rdbFemenino.TabStop = true;
+            this.rdbFemenino.Text = "Femenino";
+            this.rdbFemenino.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtApellidos
             // 
-            this.textBox2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(412, 32);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(217, 25);
-            this.textBox2.TabIndex = 5;
+            this.txtApellidos.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Location = new System.Drawing.Point(412, 32);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(217, 25);
+            this.txtApellidos.TabIndex = 5;
             // 
-            // textBox3
+            // txtLugarNacimiento
             // 
-            this.textBox3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(173, 77);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(168, 25);
-            this.textBox3.TabIndex = 7;
+            this.txtLugarNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(420, 81);
+            this.txtLugarNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLugarNacimiento.Name = "txtLugarNacimiento";
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(209, 25);
+            this.txtLugarNacimiento.TabIndex = 7;
             // 
-            // textBox5
+            // txtSector
             // 
-            this.textBox5.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(519, 208);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(76, 25);
-            this.textBox5.TabIndex = 9;
+            this.txtSector.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSector.Location = new System.Drawing.Point(73, 389);
+            this.txtSector.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSector.Name = "txtSector";
+            this.txtSector.Size = new System.Drawing.Size(129, 25);
+            this.txtSector.TabIndex = 9;
             // 
-            // textBox6
+            // txtNacionalidad
             // 
-            this.textBox6.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(756, 77);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(188, 25);
-            this.textBox6.TabIndex = 8;
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(153, 158);
-            this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(145, 25);
-            this.maskedTextBox2.TabIndex = 10;
+            this.txtNacionalidad.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNacionalidad.Location = new System.Drawing.Point(441, 124);
+            this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(188, 25);
+            this.txtNacionalidad.TabIndex = 8;
             // 
             // lbNombres
             // 
-            this.lbNombres.AutoSize = true;
             this.lbNombres.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombres.Location = new System.Drawing.Point(27, 35);
+            this.lbNombres.Location = new System.Drawing.Point(18, 35);
             this.lbNombres.Name = "lbNombres";
             this.lbNombres.Size = new System.Drawing.Size(74, 18);
             this.lbNombres.TabIndex = 11;
@@ -175,7 +168,6 @@
             // 
             // lbApellidos
             // 
-            this.lbApellidos.AutoSize = true;
             this.lbApellidos.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbApellidos.Location = new System.Drawing.Point(335, 35);
             this.lbApellidos.Name = "lbApellidos";
@@ -185,39 +177,35 @@
             // 
             // lbCedula
             // 
-            this.lbCedula.AutoSize = true;
             this.lbCedula.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedula.Location = new System.Drawing.Point(660, 35);
+            this.lbCedula.Location = new System.Drawing.Point(18, 84);
             this.lbCedula.Name = "lbCedula";
-            this.lbCedula.Size = new System.Drawing.Size(112, 18);
+            this.lbCedula.Size = new System.Drawing.Size(108, 18);
             this.lbCedula.TabIndex = 13;
-            this.lbCedula.Text = "No. de Cédula:";
+            this.lbCedula.Text = "No. de cédula";
             // 
-            // label4
+            // lbSangre
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(263, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 18);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Tipo de sangre";
+            this.lbSangre.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSangre.Location = new System.Drawing.Point(364, 206);
+            this.lbSangre.Name = "lbSangre";
+            this.lbSangre.Size = new System.Drawing.Size(112, 18);
+            this.lbSangre.TabIndex = 16;
+            this.lbSangre.Text = "Tipo de sangre";
             // 
-            // label5
+            // lbNacionalidad
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(653, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 18);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Nacionalidad";
+            this.lbNacionalidad.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNacionalidad.Location = new System.Drawing.Point(338, 127);
+            this.lbNacionalidad.Name = "lbNacionalidad";
+            this.lbNacionalidad.Size = new System.Drawing.Size(101, 18);
+            this.lbNacionalidad.TabIndex = 15;
+            this.lbNacionalidad.Text = "Nacionalidad";
             // 
             // lbFechaNacimiento
             // 
-            this.lbFechaNacimiento.AutoSize = true;
             this.lbFechaNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaNacimiento.Location = new System.Drawing.Point(355, 80);
+            this.lbFechaNacimiento.Location = new System.Drawing.Point(18, 127);
             this.lbFechaNacimiento.Name = "lbFechaNacimiento";
             this.lbFechaNacimiento.Size = new System.Drawing.Size(153, 18);
             this.lbFechaNacimiento.TabIndex = 14;
@@ -225,330 +213,348 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.lbCedulaAnterior);
+            this.groupBox1.Controls.Add(this.btnBuscarFoto);
+            this.groupBox1.Controls.Add(this.pbFoto);
+            this.groupBox1.Controls.Add(this.dtpFechaExpiracion);
+            this.groupBox1.Controls.Add(this.lbCodigoPostal);
+            this.groupBox1.Controls.Add(this.txtCodigoPostal);
+            this.groupBox1.Controls.Add(this.lbRegistroNacimiento);
+            this.groupBox1.Controls.Add(this.txtRegistroNacimiento);
+            this.groupBox1.Controls.Add(this.lbMunicipio);
+            this.groupBox1.Controls.Add(this.txtMunicipio);
+            this.groupBox1.Controls.Add(this.lbSector);
+            this.groupBox1.Controls.Add(this.lbDireccionResidencia);
+            this.groupBox1.Controls.Add(this.txtDireccionResidencia);
+            this.groupBox1.Controls.Add(this.lbColegioElectoral);
+            this.groupBox1.Controls.Add(this.txtColegioElectoral);
+            this.groupBox1.Controls.Add(this.lbUbicacionColegio);
+            this.groupBox1.Controls.Add(this.txtUbicacionColegio);
+            this.groupBox1.Controls.Add(this.lbFechaExpiracion);
+            this.groupBox1.Controls.Add(this.dtpFechaNacimiento);
+            this.groupBox1.Controls.Add(this.cbEstadoCivil);
+            this.groupBox1.Controls.Add(this.lbEstadoCivil);
+            this.groupBox1.Controls.Add(this.cbSangre);
+            this.groupBox1.Controls.Add(this.lbSexo);
             this.groupBox1.Controls.Add(this.lbLugarNacimiento);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.maskedTextBox2);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.rdbMasculino);
+            this.groupBox1.Controls.Add(this.lbSangre);
             this.groupBox1.Controls.Add(this.mtxtCedula);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.lbNacionalidad);
+            this.groupBox1.Controls.Add(this.rdbFemenino);
             this.groupBox1.Controls.Add(this.lbFechaNacimiento);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtSector);
             this.groupBox1.Controls.Add(this.lbCedula);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNombres);
             this.groupBox1.Controls.Add(this.lbApellidos);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.lbNombres);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtLugarNacimiento);
+            this.groupBox1.Controls.Add(this.txtNacionalidad);
             this.groupBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 310);
+            this.groupBox1.Size = new System.Drawing.Size(975, 431);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese los datos de su cédula";
             // 
-            // radioButton2
+            // dtpFechaExpiracion
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(73, 120);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 22);
-            this.radioButton2.TabIndex = 17;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Masculino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.dtpFechaExpiracion.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaExpiracion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaExpiracion.Location = new System.Drawing.Point(523, 246);
+            this.dtpFechaExpiracion.Name = "dtpFechaExpiracion";
+            this.dtpFechaExpiracion.Size = new System.Drawing.Size(106, 25);
+            this.dtpFechaExpiracion.TabIndex = 42;
             // 
-            // label7
+            // lbCodigoPostal
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 18);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Cédula anterior";
+            this.lbCodigoPostal.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCodigoPostal.Location = new System.Drawing.Point(425, 392);
+            this.lbCodigoPostal.Name = "lbCodigoPostal";
+            this.lbCodigoPostal.Size = new System.Drawing.Size(102, 18);
+            this.lbCodigoPostal.TabIndex = 41;
+            this.lbCodigoPostal.Text = "Código postal";
+            // 
+            // txtCodigoPostal
+            // 
+            this.txtCodigoPostal.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoPostal.Location = new System.Drawing.Point(532, 389);
+            this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigoPostal.Name = "txtCodigoPostal";
+            this.txtCodigoPostal.Size = new System.Drawing.Size(126, 25);
+            this.txtCodigoPostal.TabIndex = 40;
+            // 
+            // lbRegistroNacimiento
+            // 
+            this.lbRegistroNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRegistroNacimiento.Location = new System.Drawing.Point(293, 168);
+            this.lbRegistroNacimiento.Name = "lbRegistroNacimiento";
+            this.lbRegistroNacimiento.Size = new System.Drawing.Size(168, 18);
+            this.lbRegistroNacimiento.TabIndex = 39;
+            this.lbRegistroNacimiento.Text = "Registro de nacimiento";
+            // 
+            // txtRegistroNacimiento
+            // 
+            this.txtRegistroNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegistroNacimiento.Location = new System.Drawing.Point(465, 165);
+            this.txtRegistroNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRegistroNacimiento.Name = "txtRegistroNacimiento";
+            this.txtRegistroNacimiento.Size = new System.Drawing.Size(164, 25);
+            this.txtRegistroNacimiento.TabIndex = 38;
+            // 
+            // lbMunicipio
+            // 
+            this.lbMunicipio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMunicipio.Location = new System.Drawing.Point(214, 392);
+            this.lbMunicipio.Name = "lbMunicipio";
+            this.lbMunicipio.Size = new System.Drawing.Size(78, 18);
+            this.lbMunicipio.TabIndex = 37;
+            this.lbMunicipio.Text = "Municipio";
+            // 
+            // txtMunicipio
+            // 
+            this.txtMunicipio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMunicipio.Location = new System.Drawing.Point(296, 389);
+            this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMunicipio.Name = "txtMunicipio";
+            this.txtMunicipio.Size = new System.Drawing.Size(122, 25);
+            this.txtMunicipio.TabIndex = 36;
+            // 
+            // lbSector
+            // 
+            this.lbSector.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSector.Location = new System.Drawing.Point(18, 392);
+            this.lbSector.Name = "lbSector";
+            this.lbSector.Size = new System.Drawing.Size(51, 18);
+            this.lbSector.TabIndex = 35;
+            this.lbSector.Text = "Sector";
+            // 
+            // lbDireccionResidencia
+            // 
+            this.lbDireccionResidencia.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDireccionResidencia.Location = new System.Drawing.Point(18, 349);
+            this.lbDireccionResidencia.Name = "lbDireccionResidencia";
+            this.lbDireccionResidencia.Size = new System.Drawing.Size(172, 18);
+            this.lbDireccionResidencia.TabIndex = 34;
+            this.lbDireccionResidencia.Text = "Dirección de residencia";
+            // 
+            // txtDireccionResidencia
+            // 
+            this.txtDireccionResidencia.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionResidencia.Location = new System.Drawing.Point(195, 346);
+            this.txtDireccionResidencia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDireccionResidencia.Name = "txtDireccionResidencia";
+            this.txtDireccionResidencia.Size = new System.Drawing.Size(752, 25);
+            this.txtDireccionResidencia.TabIndex = 33;
+            // 
+            // lbColegioElectoral
+            // 
+            this.lbColegioElectoral.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbColegioElectoral.Location = new System.Drawing.Point(18, 249);
+            this.lbColegioElectoral.Name = "lbColegioElectoral";
+            this.lbColegioElectoral.Size = new System.Drawing.Size(123, 18);
+            this.lbColegioElectoral.TabIndex = 32;
+            this.lbColegioElectoral.Text = "Colegio electoral";
+            // 
+            // txtColegioElectoral
+            // 
+            this.txtColegioElectoral.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColegioElectoral.Location = new System.Drawing.Point(151, 246);
+            this.txtColegioElectoral.Margin = new System.Windows.Forms.Padding(2);
+            this.txtColegioElectoral.Name = "txtColegioElectoral";
+            this.txtColegioElectoral.Size = new System.Drawing.Size(164, 25);
+            this.txtColegioElectoral.TabIndex = 31;
+            // 
+            // lbUbicacionColegio
+            // 
+            this.lbUbicacionColegio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUbicacionColegio.Location = new System.Drawing.Point(18, 288);
+            this.lbUbicacionColegio.Name = "lbUbicacionColegio";
+            this.lbUbicacionColegio.Size = new System.Drawing.Size(164, 36);
+            this.lbUbicacionColegio.TabIndex = 30;
+            this.lbUbicacionColegio.Text = "Ubicación del colegio electoral";
+            // 
+            // txtUbicacionColegio
+            // 
+            this.txtUbicacionColegio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUbicacionColegio.Location = new System.Drawing.Point(187, 294);
+            this.txtUbicacionColegio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUbicacionColegio.Name = "txtUbicacionColegio";
+            this.txtUbicacionColegio.Size = new System.Drawing.Size(760, 25);
+            this.txtUbicacionColegio.TabIndex = 29;
+            // 
+            // lbFechaExpiracion
+            // 
+            this.lbFechaExpiracion.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechaExpiracion.Location = new System.Drawing.Point(352, 240);
+            this.lbFechaExpiracion.Name = "lbFechaExpiracion";
+            this.lbFechaExpiracion.Size = new System.Drawing.Size(165, 37);
+            this.lbFechaExpiracion.TabIndex = 26;
+            this.lbFechaExpiracion.Text = "Fecha de expiración del documento";
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(180, 124);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(139, 25);
+            this.dtpFechaNacimiento.TabIndex = 25;
+            // 
+            // cbEstadoCivil
+            // 
+            this.cbEstadoCivil.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstadoCivil.FormattingEnabled = true;
+            this.cbEstadoCivil.Location = new System.Drawing.Point(111, 202);
+            this.cbEstadoCivil.Name = "cbEstadoCivil";
+            this.cbEstadoCivil.Size = new System.Drawing.Size(194, 26);
+            this.cbEstadoCivil.TabIndex = 24;
+            // 
+            // lbEstadoCivil
+            // 
+            this.lbEstadoCivil.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEstadoCivil.Location = new System.Drawing.Point(18, 205);
+            this.lbEstadoCivil.Name = "lbEstadoCivil";
+            this.lbEstadoCivil.Size = new System.Drawing.Size(87, 18);
+            this.lbEstadoCivil.TabIndex = 23;
+            this.lbEstadoCivil.Text = "Estado civil";
+            // 
+            // cbSangre
+            // 
+            this.cbSangre.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSangre.FormattingEnabled = true;
+            this.cbSangre.Location = new System.Drawing.Point(483, 202);
+            this.cbSangre.Name = "cbSangre";
+            this.cbSangre.Size = new System.Drawing.Size(146, 26);
+            this.cbSangre.TabIndex = 22;
+            // 
+            // lbSexo
+            // 
+            this.lbSexo.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSexo.Location = new System.Drawing.Point(18, 167);
+            this.lbSexo.Name = "lbSexo";
+            this.lbSexo.Size = new System.Drawing.Size(40, 18);
+            this.lbSexo.TabIndex = 21;
+            this.lbSexo.Text = "Sexo";
             // 
             // lbLugarNacimiento
             // 
-            this.lbLugarNacimiento.AutoSize = true;
             this.lbLugarNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLugarNacimiento.Location = new System.Drawing.Point(27, 80);
+            this.lbLugarNacimiento.Location = new System.Drawing.Point(328, 73);
             this.lbLugarNacimiento.Name = "lbLugarNacimiento";
-            this.lbLugarNacimiento.Size = new System.Drawing.Size(152, 18);
+            this.lbLugarNacimiento.Size = new System.Drawing.Size(87, 40);
             this.lbLugarNacimiento.TabIndex = 18;
             this.lbLugarNacimiento.Text = "Lugar de nacimiento";
             // 
-            // label1
+            // rdbMasculino
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 18);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Sexo";
+            this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMasculino.Location = new System.Drawing.Point(80, 165);
+            this.rdbMasculino.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbMasculino.Name = "rdbMasculino";
+            this.rdbMasculino.Size = new System.Drawing.Size(91, 22);
+            this.rdbMasculino.TabIndex = 17;
+            this.rdbMasculino.TabStop = true;
+            this.rdbMasculino.Text = "Masculino";
+            this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // btnCrear
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(370, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(77, 26);
-            this.comboBox1.TabIndex = 22;
+            this.btnCrear.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.Location = new System.Drawing.Point(12, 479);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(319, 49);
+            this.btnCrear.TabIndex = 18;
+            this.btnCrear.Text = "Crear registro";
+            this.btnCrear.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // btnGuardar
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(562, 118);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(125, 26);
-            this.comboBox2.TabIndex = 24;
+            this.btnGuardar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(337, 479);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(342, 49);
+            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // dgvCiudadanos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(463, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 18);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Estado civil";
+            this.dgvCiudadanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCiudadanos.Location = new System.Drawing.Point(12, 534);
+            this.dgvCiudadanos.Name = "dgvCiudadanos";
+            this.dgvCiudadanos.Size = new System.Drawing.Size(975, 142);
+            this.dgvCiudadanos.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // btnCancelar
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(505, 77);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(124, 25);
-            this.dateTimePicker1.TabIndex = 25;
+            this.btnCancelar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(685, 479);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(302, 49);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // pbFoto
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(698, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 18);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Fecha de expiración";
+            this.pbFoto.Location = new System.Drawing.Point(670, 24);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(277, 210);
+            this.pbFoto.TabIndex = 43;
+            this.pbFoto.TabStop = false;
             // 
-            // checkBox1
+            // btnBuscarFoto
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(318, 165);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.btnBuscarFoto.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarFoto.Location = new System.Drawing.Point(670, 246);
+            this.btnBuscarFoto.Name = "btnBuscarFoto";
+            this.btnBuscarFoto.Size = new System.Drawing.Size(277, 37);
+            this.btnBuscarFoto.TabIndex = 44;
+            this.btnBuscarFoto.Text = "Buscar foto";
+            this.btnBuscarFoto.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // maskedTextBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(670, 161);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(223, 18);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Ubicación del colegio electoral:";
+            this.maskedTextBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(768, 392);
+            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(179, 25);
+            this.maskedTextBox1.TabIndex = 47;
             // 
-            // textBox4
+            // lbCedulaAnterior
             // 
-            this.textBox4.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(886, 154);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(84, 25);
-            this.textBox4.TabIndex = 29;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(354, 164);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 18);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Colegio electoral";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(478, 161);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(164, 25);
-            this.textBox7.TabIndex = 31;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(23, 208);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(176, 18);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Dirección de residencia:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(239, 201);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(164, 25);
-            this.textBox8.TabIndex = 33;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(437, 211);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 18);
-            this.label10.TabIndex = 35;
-            this.label10.Text = "Sector";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(629, 214);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 18);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Municipio";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(711, 211);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(76, 25);
-            this.textBox9.TabIndex = 36;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(23, 255);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(172, 18);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Registro de nacimiento:";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(239, 248);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(164, 25);
-            this.textBox10.TabIndex = 38;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(437, 255);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(102, 18);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Código postal";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(537, 255);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 25);
-            this.textBox11.TabIndex = 40;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(838, 118);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(106, 25);
-            this.dateTimePicker2.TabIndex = 42;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(13, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 35);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Crear registro";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(220, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 35);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 430);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(969, 90);
-            this.dataGridView1.TabIndex = 20;
+            this.lbCedulaAnterior.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCedulaAnterior.Location = new System.Drawing.Point(672, 395);
+            this.lbCedulaAnterior.Name = "lbCedulaAnterior";
+            this.lbCedulaAnterior.Size = new System.Drawing.Size(92, 18);
+            this.lbCedulaAnterior.TabIndex = 48;
+            this.lbCedulaAnterior.Text = "Cédula ant.";
             // 
             // Cedula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(999, 552);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1003, 688);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.dgvCiudadanos);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Titulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Cedula";
             this.Text = "Registro de Ciudadano";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCiudadanos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,48 +562,50 @@
         #endregion
 
         private System.Windows.Forms.Label Titulo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.MaskedTextBox mtxtCedula;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.RadioButton rdbFemenino;
+        private System.Windows.Forms.TextBox txtApellidos;
+        private System.Windows.Forms.TextBox txtLugarNacimiento;
+        private System.Windows.Forms.TextBox txtSector;
+        private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label lbNombres;
         private System.Windows.Forms.Label lbApellidos;
         private System.Windows.Forms.Label lbCedula;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbSangre;
+        private System.Windows.Forms.Label lbNacionalidad;
         private System.Windows.Forms.Label lbFechaNacimiento;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbLugarNacimiento;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RadioButton rdbMasculino;
+        private System.Windows.Forms.Label lbSexo;
+        private System.Windows.Forms.ComboBox cbSangre;
+        private System.Windows.Forms.ComboBox cbEstadoCivil;
+        private System.Windows.Forms.Label lbEstadoCivil;
+        private System.Windows.Forms.Label lbFechaExpiracion;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.Label lbUbicacionColegio;
+        private System.Windows.Forms.TextBox txtUbicacionColegio;
+        private System.Windows.Forms.Label lbColegioElectoral;
+        private System.Windows.Forms.TextBox txtColegioElectoral;
+        private System.Windows.Forms.Label lbDireccionResidencia;
+        private System.Windows.Forms.TextBox txtDireccionResidencia;
+        private System.Windows.Forms.Label lbSector;
+        private System.Windows.Forms.Label lbMunicipio;
+        private System.Windows.Forms.TextBox txtMunicipio;
+        private System.Windows.Forms.Label lbRegistroNacimiento;
+        private System.Windows.Forms.TextBox txtRegistroNacimiento;
+        private System.Windows.Forms.Label lbCodigoPostal;
+        private System.Windows.Forms.TextBox txtCodigoPostal;
+        private System.Windows.Forms.DateTimePicker dtpFechaExpiracion;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView dgvCiudadanos;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnBuscarFoto;
+        private System.Windows.Forms.PictureBox pbFoto;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label lbCedulaAnterior;
     }
 }
 
