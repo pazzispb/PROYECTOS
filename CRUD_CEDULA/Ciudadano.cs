@@ -8,7 +8,7 @@ namespace CRUD_CEDULA
 {
     internal class Ciudadano
     {
-        public int Cedula { get; set; }
+        public string Cedula { get; set; }
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string LugarNacimiento { get; set; }
