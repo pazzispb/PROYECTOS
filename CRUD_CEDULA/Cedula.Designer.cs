@@ -71,7 +71,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.btnBuscarFoto = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtCedulaAnterior = new System.Windows.Forms.MaskedTextBox();
             this.lbCedulaAnterior = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCiudadanos)).BeginInit();
@@ -81,7 +81,7 @@
             // Titulo
             // 
             this.Titulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Titulo.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titulo.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.Location = new System.Drawing.Point(0, 0);
             this.Titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Titulo.Name = "Titulo";
@@ -104,9 +104,10 @@
             this.mtxtCedula.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxtCedula.Location = new System.Drawing.Point(140, 81);
             this.mtxtCedula.Margin = new System.Windows.Forms.Padding(2);
+            this.mtxtCedula.Mask = "000-0000000-0";
             this.mtxtCedula.Name = "mtxtCedula";
             this.mtxtCedula.Size = new System.Drawing.Size(179, 25);
-            this.mtxtCedula.TabIndex = 2;
+            this.mtxtCedula.TabIndex = 3;
             // 
             // rdbFemenino
             // 
@@ -116,8 +117,7 @@
             this.rdbFemenino.Margin = new System.Windows.Forms.Padding(2);
             this.rdbFemenino.Name = "rdbFemenino";
             this.rdbFemenino.Size = new System.Drawing.Size(89, 22);
-            this.rdbFemenino.TabIndex = 3;
-            this.rdbFemenino.TabStop = true;
+            this.rdbFemenino.TabIndex = 8;
             this.rdbFemenino.Text = "Femenino";
             this.rdbFemenino.UseVisualStyleBackColor = true;
             // 
@@ -128,16 +128,16 @@
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(217, 25);
-            this.txtApellidos.TabIndex = 5;
+            this.txtApellidos.TabIndex = 2;
             // 
             // txtLugarNacimiento
             // 
             this.txtLugarNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLugarNacimiento.Location = new System.Drawing.Point(420, 81);
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(431, 81);
             this.txtLugarNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtLugarNacimiento.Name = "txtLugarNacimiento";
-            this.txtLugarNacimiento.Size = new System.Drawing.Size(209, 25);
-            this.txtLugarNacimiento.TabIndex = 7;
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(198, 25);
+            this.txtLugarNacimiento.TabIndex = 4;
             // 
             // txtSector
             // 
@@ -146,7 +146,7 @@
             this.txtSector.Margin = new System.Windows.Forms.Padding(2);
             this.txtSector.Name = "txtSector";
             this.txtSector.Size = new System.Drawing.Size(129, 25);
-            this.txtSector.TabIndex = 9;
+            this.txtSector.TabIndex = 16;
             // 
             // txtNacionalidad
             // 
@@ -155,16 +155,17 @@
             this.txtNacionalidad.Margin = new System.Windows.Forms.Padding(2);
             this.txtNacionalidad.Name = "txtNacionalidad";
             this.txtNacionalidad.Size = new System.Drawing.Size(188, 25);
-            this.txtNacionalidad.TabIndex = 8;
+            this.txtNacionalidad.TabIndex = 6;
             // 
             // lbNombres
             // 
             this.lbNombres.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombres.Location = new System.Drawing.Point(18, 35);
             this.lbNombres.Name = "lbNombres";
-            this.lbNombres.Size = new System.Drawing.Size(74, 18);
+            this.lbNombres.Size = new System.Drawing.Size(76, 18);
             this.lbNombres.TabIndex = 11;
             this.lbNombres.Text = "Nombres";
+            this.lbNombres.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbApellidos
             // 
@@ -174,6 +175,7 @@
             this.lbApellidos.Size = new System.Drawing.Size(72, 18);
             this.lbApellidos.TabIndex = 12;
             this.lbApellidos.Text = "Apellidos";
+            this.lbApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbCedula
             // 
@@ -183,24 +185,27 @@
             this.lbCedula.Size = new System.Drawing.Size(108, 18);
             this.lbCedula.TabIndex = 13;
             this.lbCedula.Text = "No. de cédula";
+            this.lbCedula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbSangre
             // 
             this.lbSangre.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSangre.Location = new System.Drawing.Point(364, 206);
+            this.lbSangre.Location = new System.Drawing.Point(335, 206);
             this.lbSangre.Name = "lbSangre";
             this.lbSangre.Size = new System.Drawing.Size(112, 18);
             this.lbSangre.TabIndex = 16;
             this.lbSangre.Text = "Tipo de sangre";
+            this.lbSangre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbNacionalidad
             // 
             this.lbNacionalidad.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNacionalidad.Location = new System.Drawing.Point(338, 127);
+            this.lbNacionalidad.Location = new System.Drawing.Point(335, 127);
             this.lbNacionalidad.Name = "lbNacionalidad";
             this.lbNacionalidad.Size = new System.Drawing.Size(101, 18);
             this.lbNacionalidad.TabIndex = 15;
             this.lbNacionalidad.Text = "Nacionalidad";
+            this.lbNacionalidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbFechaNacimiento
             // 
@@ -210,10 +215,11 @@
             this.lbFechaNacimiento.Size = new System.Drawing.Size(153, 18);
             this.lbFechaNacimiento.TabIndex = 14;
             this.lbFechaNacimiento.Text = "Fecha de nacimiento";
+            this.lbFechaNacimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.mtxtCedulaAnterior);
             this.groupBox1.Controls.Add(this.lbCedulaAnterior);
             this.groupBox1.Controls.Add(this.btnBuscarFoto);
             this.groupBox1.Controls.Add(this.pbFoto);
@@ -264,64 +270,67 @@
             // 
             this.dtpFechaExpiracion.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaExpiracion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaExpiracion.Location = new System.Drawing.Point(523, 246);
+            this.dtpFechaExpiracion.Location = new System.Drawing.Point(523, 250);
             this.dtpFechaExpiracion.Name = "dtpFechaExpiracion";
             this.dtpFechaExpiracion.Size = new System.Drawing.Size(106, 25);
-            this.dtpFechaExpiracion.TabIndex = 42;
+            this.dtpFechaExpiracion.TabIndex = 13;
             // 
             // lbCodigoPostal
             // 
             this.lbCodigoPostal.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodigoPostal.Location = new System.Drawing.Point(425, 392);
+            this.lbCodigoPostal.Location = new System.Drawing.Point(452, 392);
             this.lbCodigoPostal.Name = "lbCodigoPostal";
             this.lbCodigoPostal.Size = new System.Drawing.Size(102, 18);
             this.lbCodigoPostal.TabIndex = 41;
             this.lbCodigoPostal.Text = "Código postal";
+            this.lbCodigoPostal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCodigoPostal
             // 
             this.txtCodigoPostal.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoPostal.Location = new System.Drawing.Point(532, 389);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(559, 389);
             this.txtCodigoPostal.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(126, 25);
-            this.txtCodigoPostal.TabIndex = 40;
+            this.txtCodigoPostal.TabIndex = 18;
             // 
             // lbRegistroNacimiento
             // 
             this.lbRegistroNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRegistroNacimiento.Location = new System.Drawing.Point(293, 168);
+            this.lbRegistroNacimiento.Location = new System.Drawing.Point(335, 157);
             this.lbRegistroNacimiento.Name = "lbRegistroNacimiento";
-            this.lbRegistroNacimiento.Size = new System.Drawing.Size(168, 18);
+            this.lbRegistroNacimiento.Size = new System.Drawing.Size(95, 38);
             this.lbRegistroNacimiento.TabIndex = 39;
             this.lbRegistroNacimiento.Text = "Registro de nacimiento";
+            this.lbRegistroNacimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtRegistroNacimiento
             // 
             this.txtRegistroNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegistroNacimiento.Location = new System.Drawing.Point(465, 165);
+            this.txtRegistroNacimiento.Location = new System.Drawing.Point(441, 164);
             this.txtRegistroNacimiento.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistroNacimiento.Name = "txtRegistroNacimiento";
-            this.txtRegistroNacimiento.Size = new System.Drawing.Size(164, 25);
-            this.txtRegistroNacimiento.TabIndex = 38;
+            this.txtRegistroNacimiento.Size = new System.Drawing.Size(188, 25);
+            this.txtRegistroNacimiento.TabIndex = 9;
             // 
             // lbMunicipio
             // 
             this.lbMunicipio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMunicipio.Location = new System.Drawing.Point(214, 392);
+            this.lbMunicipio.Location = new System.Drawing.Point(229, 392);
             this.lbMunicipio.Name = "lbMunicipio";
             this.lbMunicipio.Size = new System.Drawing.Size(78, 18);
             this.lbMunicipio.TabIndex = 37;
             this.lbMunicipio.Text = "Municipio";
+            this.lbMunicipio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtMunicipio
             // 
             this.txtMunicipio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMunicipio.Location = new System.Drawing.Point(296, 389);
+            this.txtMunicipio.Location = new System.Drawing.Point(311, 389);
             this.txtMunicipio.Margin = new System.Windows.Forms.Padding(2);
             this.txtMunicipio.Name = "txtMunicipio";
             this.txtMunicipio.Size = new System.Drawing.Size(122, 25);
-            this.txtMunicipio.TabIndex = 36;
+            this.txtMunicipio.TabIndex = 17;
             // 
             // lbSector
             // 
@@ -331,6 +340,7 @@
             this.lbSector.Size = new System.Drawing.Size(51, 18);
             this.lbSector.TabIndex = 35;
             this.lbSector.Text = "Sector";
+            this.lbSector.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbDireccionResidencia
             // 
@@ -340,6 +350,7 @@
             this.lbDireccionResidencia.Size = new System.Drawing.Size(172, 18);
             this.lbDireccionResidencia.TabIndex = 34;
             this.lbDireccionResidencia.Text = "Dirección de residencia";
+            this.lbDireccionResidencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtDireccionResidencia
             // 
@@ -347,35 +358,37 @@
             this.txtDireccionResidencia.Location = new System.Drawing.Point(195, 346);
             this.txtDireccionResidencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtDireccionResidencia.Name = "txtDireccionResidencia";
-            this.txtDireccionResidencia.Size = new System.Drawing.Size(752, 25);
-            this.txtDireccionResidencia.TabIndex = 33;
+            this.txtDireccionResidencia.Size = new System.Drawing.Size(761, 25);
+            this.txtDireccionResidencia.TabIndex = 15;
             // 
             // lbColegioElectoral
             // 
             this.lbColegioElectoral.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbColegioElectoral.Location = new System.Drawing.Point(18, 249);
+            this.lbColegioElectoral.Location = new System.Drawing.Point(18, 253);
             this.lbColegioElectoral.Name = "lbColegioElectoral";
             this.lbColegioElectoral.Size = new System.Drawing.Size(123, 18);
             this.lbColegioElectoral.TabIndex = 32;
             this.lbColegioElectoral.Text = "Colegio electoral";
+            this.lbColegioElectoral.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtColegioElectoral
             // 
             this.txtColegioElectoral.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtColegioElectoral.Location = new System.Drawing.Point(151, 246);
+            this.txtColegioElectoral.Location = new System.Drawing.Point(151, 250);
             this.txtColegioElectoral.Margin = new System.Windows.Forms.Padding(2);
             this.txtColegioElectoral.Name = "txtColegioElectoral";
             this.txtColegioElectoral.Size = new System.Drawing.Size(164, 25);
-            this.txtColegioElectoral.TabIndex = 31;
+            this.txtColegioElectoral.TabIndex = 12;
             // 
             // lbUbicacionColegio
             // 
             this.lbUbicacionColegio.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUbicacionColegio.Location = new System.Drawing.Point(18, 288);
             this.lbUbicacionColegio.Name = "lbUbicacionColegio";
-            this.lbUbicacionColegio.Size = new System.Drawing.Size(164, 36);
+            this.lbUbicacionColegio.Size = new System.Drawing.Size(158, 36);
             this.lbUbicacionColegio.TabIndex = 30;
             this.lbUbicacionColegio.Text = "Ubicación del colegio electoral";
+            this.lbUbicacionColegio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtUbicacionColegio
             // 
@@ -383,17 +396,18 @@
             this.txtUbicacionColegio.Location = new System.Drawing.Point(187, 294);
             this.txtUbicacionColegio.Margin = new System.Windows.Forms.Padding(2);
             this.txtUbicacionColegio.Name = "txtUbicacionColegio";
-            this.txtUbicacionColegio.Size = new System.Drawing.Size(760, 25);
-            this.txtUbicacionColegio.TabIndex = 29;
+            this.txtUbicacionColegio.Size = new System.Drawing.Size(769, 25);
+            this.txtUbicacionColegio.TabIndex = 14;
             // 
             // lbFechaExpiracion
             // 
             this.lbFechaExpiracion.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFechaExpiracion.Location = new System.Drawing.Point(352, 240);
+            this.lbFechaExpiracion.Location = new System.Drawing.Point(335, 244);
             this.lbFechaExpiracion.Name = "lbFechaExpiracion";
-            this.lbFechaExpiracion.Size = new System.Drawing.Size(165, 37);
+            this.lbFechaExpiracion.Size = new System.Drawing.Size(179, 37);
             this.lbFechaExpiracion.TabIndex = 26;
             this.lbFechaExpiracion.Text = "Fecha de expiración del documento";
+            this.lbFechaExpiracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpFechaNacimiento
             // 
@@ -402,34 +416,49 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(180, 124);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(139, 25);
-            this.dtpFechaNacimiento.TabIndex = 25;
+            this.dtpFechaNacimiento.TabIndex = 5;
             // 
             // cbEstadoCivil
             // 
             this.cbEstadoCivil.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstadoCivil.FormattingEnabled = true;
+            this.cbEstadoCivil.Items.AddRange(new object[] {
+            "Soltero",
+            "Casado",
+            "Viudo",
+            "Unión libre"});
             this.cbEstadoCivil.Location = new System.Drawing.Point(111, 202);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Size = new System.Drawing.Size(194, 26);
-            this.cbEstadoCivil.TabIndex = 24;
+            this.cbEstadoCivil.TabIndex = 10;
             // 
             // lbEstadoCivil
             // 
             this.lbEstadoCivil.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstadoCivil.Location = new System.Drawing.Point(18, 205);
+            this.lbEstadoCivil.Location = new System.Drawing.Point(18, 206);
             this.lbEstadoCivil.Name = "lbEstadoCivil";
             this.lbEstadoCivil.Size = new System.Drawing.Size(87, 18);
             this.lbEstadoCivil.TabIndex = 23;
             this.lbEstadoCivil.Text = "Estado civil";
+            this.lbEstadoCivil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cbSangre
             // 
             this.cbSangre.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSangre.FormattingEnabled = true;
-            this.cbSangre.Location = new System.Drawing.Point(483, 202);
+            this.cbSangre.Items.AddRange(new object[] {
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "AB+",
+            "AB-",
+            "O+",
+            "O-"});
+            this.cbSangre.Location = new System.Drawing.Point(455, 202);
             this.cbSangre.Name = "cbSangre";
-            this.cbSangre.Size = new System.Drawing.Size(146, 26);
-            this.cbSangre.TabIndex = 22;
+            this.cbSangre.Size = new System.Drawing.Size(174, 26);
+            this.cbSangre.TabIndex = 11;
             // 
             // lbSexo
             // 
@@ -439,48 +468,58 @@
             this.lbSexo.Size = new System.Drawing.Size(40, 18);
             this.lbSexo.TabIndex = 21;
             this.lbSexo.Text = "Sexo";
+            this.lbSexo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbLugarNacimiento
             // 
             this.lbLugarNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLugarNacimiento.Location = new System.Drawing.Point(328, 73);
+            this.lbLugarNacimiento.Location = new System.Drawing.Point(335, 73);
             this.lbLugarNacimiento.Name = "lbLugarNacimiento";
-            this.lbLugarNacimiento.Size = new System.Drawing.Size(87, 40);
+            this.lbLugarNacimiento.Size = new System.Drawing.Size(91, 40);
             this.lbLugarNacimiento.TabIndex = 18;
             this.lbLugarNacimiento.Text = "Lugar de nacimiento";
+            this.lbLugarNacimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rdbMasculino
             // 
             this.rdbMasculino.AutoSize = true;
+            this.rdbMasculino.Checked = true;
             this.rdbMasculino.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbMasculino.Location = new System.Drawing.Point(80, 165);
             this.rdbMasculino.Margin = new System.Windows.Forms.Padding(2);
             this.rdbMasculino.Name = "rdbMasculino";
             this.rdbMasculino.Size = new System.Drawing.Size(91, 22);
-            this.rdbMasculino.TabIndex = 17;
+            this.rdbMasculino.TabIndex = 7;
             this.rdbMasculino.TabStop = true;
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
             // btnCrear
             // 
+            this.btnCrear.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrear.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear.Location = new System.Drawing.Point(12, 479);
+            this.btnCrear.ForeColor = System.Drawing.Color.White;
+            this.btnCrear.Location = new System.Drawing.Point(33, 484);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(319, 49);
-            this.btnCrear.TabIndex = 18;
+            this.btnCrear.Size = new System.Drawing.Size(271, 40);
+            this.btnCrear.TabIndex = 21;
             this.btnCrear.Text = "Crear registro";
-            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnGuardar.Enabled = false;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(337, 479);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(365, 484);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(342, 49);
-            this.btnGuardar.TabIndex = 19;
+            this.btnGuardar.Size = new System.Drawing.Size(271, 40);
+            this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // dgvCiudadanos
             // 
@@ -489,16 +528,21 @@
             this.dgvCiudadanos.Name = "dgvCiudadanos";
             this.dgvCiudadanos.Size = new System.Drawing.Size(975, 142);
             this.dgvCiudadanos.TabIndex = 20;
+            this.dgvCiudadanos.TabStop = false;
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(685, 479);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(697, 484);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(302, 49);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Size = new System.Drawing.Size(271, 40);
+            this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // pbFoto
             // 
@@ -510,31 +554,36 @@
             // 
             // btnBuscarFoto
             // 
+            this.btnBuscarFoto.BackColor = System.Drawing.Color.Gray;
+            this.btnBuscarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscarFoto.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarFoto.ForeColor = System.Drawing.Color.White;
             this.btnBuscarFoto.Location = new System.Drawing.Point(670, 246);
             this.btnBuscarFoto.Name = "btnBuscarFoto";
-            this.btnBuscarFoto.Size = new System.Drawing.Size(277, 37);
-            this.btnBuscarFoto.TabIndex = 44;
+            this.btnBuscarFoto.Size = new System.Drawing.Size(286, 37);
+            this.btnBuscarFoto.TabIndex = 20;
             this.btnBuscarFoto.Text = "Buscar foto";
-            this.btnBuscarFoto.UseVisualStyleBackColor = true;
+            this.btnBuscarFoto.UseVisualStyleBackColor = false;
             // 
-            // maskedTextBox1
+            // mtxtCedulaAnterior
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(768, 392);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(179, 25);
-            this.maskedTextBox1.TabIndex = 47;
+            this.mtxtCedulaAnterior.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtCedulaAnterior.Location = new System.Drawing.Point(832, 392);
+            this.mtxtCedulaAnterior.Margin = new System.Windows.Forms.Padding(2);
+            this.mtxtCedulaAnterior.Mask = "000-0000000-0";
+            this.mtxtCedulaAnterior.Name = "mtxtCedulaAnterior";
+            this.mtxtCedulaAnterior.Size = new System.Drawing.Size(124, 25);
+            this.mtxtCedulaAnterior.TabIndex = 19;
             // 
             // lbCedulaAnterior
             // 
             this.lbCedulaAnterior.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCedulaAnterior.Location = new System.Drawing.Point(672, 395);
+            this.lbCedulaAnterior.Location = new System.Drawing.Point(711, 395);
             this.lbCedulaAnterior.Name = "lbCedulaAnterior";
-            this.lbCedulaAnterior.Size = new System.Drawing.Size(92, 18);
+            this.lbCedulaAnterior.Size = new System.Drawing.Size(116, 18);
             this.lbCedulaAnterior.TabIndex = 48;
-            this.lbCedulaAnterior.Text = "Cédula ant.";
+            this.lbCedulaAnterior.Text = "Cédula anterior";
+            this.lbCedulaAnterior.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Cedula
             // 
@@ -549,7 +598,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Titulo);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Cedula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Ciudadano";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -604,7 +655,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnBuscarFoto;
         private System.Windows.Forms.PictureBox pbFoto;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtCedulaAnterior;
         private System.Windows.Forms.Label lbCedulaAnterior;
     }
 }

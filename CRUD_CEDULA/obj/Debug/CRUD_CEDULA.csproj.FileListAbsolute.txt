@@ -1,0 +1,11 @@
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\bin\Debug\CRUD_CEDULA.exe.config
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\bin\Debug\CRUD_CEDULA.exe
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\bin\Debug\CRUD_CEDULA.pdb
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.csproj.AssemblyReference.cache
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.csproj.SuggestedBindingRedirects.cache
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.Cedula.resources
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.Properties.Resources.resources
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.csproj.GenerateResource.cache
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.csproj.CoreCompileInputs.cache
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.exe
+C:\Users\pazzi\OneDrive - INTEC\Escritorio\DESARROLLO DE SOFTWARE II\TAREAS\CRUD_CEDULA\CRUD_CEDULA\obj\Debug\CRUD_CEDULA.pdb
