@@ -34,7 +34,6 @@ namespace CRUD_CEDULA
             cbEstadoCivil.SelectedIndex = 0;
             cbSangre.SelectedIndex = 0;
         }
-
         private void btnCrear_Click(object sender, EventArgs e)
         {
             gbDatosCedula.Enabled = true;
@@ -116,6 +115,10 @@ namespace CRUD_CEDULA
         (bool,bool) ValidarCampos() //revisa si los campos de Codigo Postal y Colegio Electoral estan vacios
         {
             return (string.IsNullOrWhiteSpace(txtCodigoPostal.Text),string.IsNullOrWhiteSpace(txtColegioElectoral.Text));
+        }
+        private void rdbMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            Sexo = rdbMasculino.Checked ? 'M' : 'F';
         }
     }
 }

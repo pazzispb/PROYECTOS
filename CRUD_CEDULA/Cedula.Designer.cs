@@ -268,9 +268,9 @@
             this.gbDatosCedula.Enabled = false;
             this.gbDatosCedula.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDatosCedula.Location = new System.Drawing.Point(16, 52);
-            this.gbDatosCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDatosCedula.Margin = new System.Windows.Forms.Padding(4);
             this.gbDatosCedula.Name = "gbDatosCedula";
-            this.gbDatosCedula.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDatosCedula.Padding = new System.Windows.Forms.Padding(4);
             this.gbDatosCedula.Size = new System.Drawing.Size(1300, 530);
             this.gbDatosCedula.TabIndex = 17;
             this.gbDatosCedula.TabStop = false;
@@ -306,7 +306,7 @@
             this.btnBuscarFoto.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarFoto.ForeColor = System.Drawing.Color.White;
             this.btnBuscarFoto.Location = new System.Drawing.Point(893, 303);
-            this.btnBuscarFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarFoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarFoto.Name = "btnBuscarFoto";
             this.btnBuscarFoto.Size = new System.Drawing.Size(381, 46);
             this.btnBuscarFoto.TabIndex = 20;
@@ -317,7 +317,7 @@
             // pbFoto
             // 
             this.pbFoto.Location = new System.Drawing.Point(893, 30);
-            this.pbFoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbFoto.Margin = new System.Windows.Forms.Padding(4);
             this.pbFoto.Name = "pbFoto";
             this.pbFoto.Size = new System.Drawing.Size(369, 258);
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -329,7 +329,7 @@
             this.dtpFechaExpiracion.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaExpiracion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaExpiracion.Location = new System.Drawing.Point(697, 308);
-            this.dtpFechaExpiracion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaExpiracion.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaExpiracion.Name = "dtpFechaExpiracion";
             this.dtpFechaExpiracion.Size = new System.Drawing.Size(140, 30);
             this.dtpFechaExpiracion.TabIndex = 13;
@@ -481,7 +481,7 @@
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(240, 153);
-            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaNacimiento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(184, 30);
             this.dtpFechaNacimiento.TabIndex = 5;
@@ -497,7 +497,7 @@
             "Viudo",
             "Unión libre"});
             this.cbEstadoCivil.Location = new System.Drawing.Point(148, 249);
-            this.cbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEstadoCivil.Margin = new System.Windows.Forms.Padding(4);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Size = new System.Drawing.Size(257, 30);
             this.cbEstadoCivil.TabIndex = 10;
@@ -528,7 +528,7 @@
             "O+",
             "O-"});
             this.cbSangre.Location = new System.Drawing.Point(607, 249);
-            this.cbSangre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbSangre.Margin = new System.Windows.Forms.Padding(4);
             this.cbSangre.Name = "cbSangre";
             this.cbSangre.Size = new System.Drawing.Size(231, 30);
             this.cbSangre.TabIndex = 11;
@@ -568,6 +568,7 @@
             this.rdbMasculino.TabStop = true;
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
+            this.rdbMasculino.CheckedChanged += new System.EventHandler(this.rdbMasculino_CheckedChanged);
             // 
             // btnCrear
             // 
@@ -576,7 +577,7 @@
             this.btnCrear.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.Color.White;
             this.btnCrear.Location = new System.Drawing.Point(44, 596);
-            this.btnCrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCrear.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(361, 49);
             this.btnCrear.TabIndex = 21;
@@ -592,7 +593,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(487, 596);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(361, 49);
             this.btnGuardar.TabIndex = 22;
@@ -606,7 +607,7 @@
             this.dgvCiudadanos.AllowUserToDeleteRows = false;
             this.dgvCiudadanos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCiudadanos.Location = new System.Drawing.Point(16, 657);
-            this.dgvCiudadanos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCiudadanos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCiudadanos.Name = "dgvCiudadanos";
             this.dgvCiudadanos.ReadOnly = true;
             this.dgvCiudadanos.RowHeadersWidth = 51;
@@ -622,7 +623,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(929, 596);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(361, 49);
             this.btnCancelar.TabIndex = 23;
