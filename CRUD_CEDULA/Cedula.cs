@@ -40,6 +40,7 @@ namespace CRUD_CEDULA
             gbDatosCedula.Enabled = true;
             btnCancelar.Enabled = true;
             btnGuardar.Enabled = true;
+            btnCrear.Enabled = false;
             txtNombres.Focus();
         }
 
@@ -52,6 +53,7 @@ namespace CRUD_CEDULA
             btnGuardar.Enabled = false;
             btnCancelar.Enabled = false;
             gbDatosCedula.Enabled = false;
+            btnCrear.Enabled = true;
             txtApellidos.Clear();
             txtCodigoPostal.Clear();
             txtColegioElectoral.Clear();
