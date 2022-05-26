@@ -29,7 +29,6 @@ namespace CRUD_CEDULA
                 URLImagen = Explorador.FileName;
             }
         }
-
         private void Cedula_Load(object sender, EventArgs e)
         {
             cbEstadoCivil.SelectedIndex = 0;
@@ -75,6 +74,15 @@ namespace CRUD_CEDULA
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            int CodigoPostal = 0, ColegioElectoral = 0;
+            if (!ValidarCampos().Item1)
+            {
+                CodigoPostal = int.Parse(txtCodigoPostal.Text);
+            }
+            if (!ValidarCampos().Item2)
+            {
+                ColegioElectoral = int.Parse(txtColegioElectoral.Text);
+            }
             var Objeto = new Ciudadano
             {
                 Cedula = mtxtCedula.Text,
@@ -89,18 +97,23 @@ namespace CRUD_CEDULA
                 FechaExpiracion = dtpFechaExpiracion.Value,
                 URLFoto = URLImagen,
                 CedulaAnterior = mtxtCedulaAnterior.Text,
-                ColegioElectoral = int.Parse(txtColegioElectoral.Text),
+                ColegioElectoral = ColegioElectoral,
                 UbicacionColegio = txtUbicacionColegio.Text,
                 DireccionResidencia = txtDireccionResidencia.Text,
                 Sector = txtSector.Text,
                 Municipio = txtMunicipio.Text,
                 RegistroNacimiento = txtRegistroNacimiento.Text,
-                CodigoPostal = int.Parse(txtCodigoPostal.Text),
+                CodigoPostal = CodigoPostal,
                 FechaRegistro = DateTime.Now
             };
             Lista.Add(Objeto);
             LimpiarCampos();
             ObtenerCiudadanos();
+            MessageBox.Show("Ciudadano registrado con éxito","NOTIFICACIÓN",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+        (bool,bool) ValidarCampos() //revisa si los campos de Codigo Postal y Colegio Electoral estan vacios
+        {
+            return (string.IsNullOrWhiteSpace(txtCodigoPostal.Text),string.IsNullOrWhiteSpace(txtColegioElectoral.Text));
         }
     }
 }
