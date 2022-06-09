@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUD_CEDULA", "CRUD_CEDULA\CRUD_CEDULA.csproj", "{DFDD1D36-D503-4F9D-8CAC-E3DD1D6F39AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CONTROL_GASTOS", "CONTROL_GASTOS\CONTROL_GASTOS.csproj", "{47F5C5DC-D6F6-43FA-99CB-865FFAE8826F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFDD1D36-D503-4F9D-8CAC-E3DD1D6F39AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFDD1D36-D503-4F9D-8CAC-E3DD1D6F39AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFDD1D36-D503-4F9D-8CAC-E3DD1D6F39AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47F5C5DC-D6F6-43FA-99CB-865FFAE8826F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47F5C5DC-D6F6-43FA-99CB-865FFAE8826F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47F5C5DC-D6F6-43FA-99CB-865FFAE8826F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47F5C5DC-D6F6-43FA-99CB-865FFAE8826F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
