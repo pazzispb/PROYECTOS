@@ -29,171 +29,221 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gbDate = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.gbData = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chbIsVisible = new System.Windows.Forms.CheckBox();
             this.lbID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.gbDate.SuspendLayout();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 28);
+            this.label1.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(194, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 16);
+            this.label1.Size = new System.Drawing.Size(312, 31);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Category Management";
+            this.label1.Text = "Categories Management";
             // 
-            // gbDate
+            // gbData
             // 
-            this.gbDate.Controls.Add(this.textBox2);
-            this.gbDate.Controls.Add(this.textBox1);
-            this.gbDate.Controls.Add(this.checkBox1);
-            this.gbDate.Controls.Add(this.lbID);
-            this.gbDate.Controls.Add(this.label6);
-            this.gbDate.Controls.Add(this.label5);
-            this.gbDate.Controls.Add(this.label2);
-            this.gbDate.Location = new System.Drawing.Point(15, 60);
-            this.gbDate.Name = "gbDate";
-            this.gbDate.Size = new System.Drawing.Size(408, 203);
-            this.gbDate.TabIndex = 2;
-            this.gbDate.TabStop = false;
-            this.gbDate.Text = "Enter the category\'s information";
+            this.gbData.Controls.Add(this.textBox2);
+            this.gbData.Controls.Add(this.textBox1);
+            this.gbData.Controls.Add(this.chbIsVisible);
+            this.gbData.Controls.Add(this.lbID);
+            this.gbData.Controls.Add(this.label6);
+            this.gbData.Controls.Add(this.label5);
+            this.gbData.Controls.Add(this.label2);
+            this.gbData.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.gbData.Location = new System.Drawing.Point(9, 53);
+            this.gbData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbData.Name = "gbData";
+            this.gbData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbData.Size = new System.Drawing.Size(347, 178);
+            this.gbData.TabIndex = 2;
+            this.gbData.TabStop = false;
+            this.gbData.Text = "Enter the category\'s information";
             // 
-            // button4
+            // textBox2
             // 
-            this.button4.Location = new System.Drawing.Point(122, 283);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(112, 103);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(212, 58);
+            this.textBox2.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 64);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(212, 26);
+            this.textBox1.TabIndex = 16;
+            // 
+            // chbIsVisible
+            // 
+            this.chbIsVisible.AutoSize = true;
+            this.chbIsVisible.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.chbIsVisible.Location = new System.Drawing.Point(23, 28);
+            this.chbIsVisible.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chbIsVisible.Name = "chbIsVisible";
+            this.chbIsVisible.Size = new System.Drawing.Size(104, 24);
+            this.chbIsVisible.TabIndex = 15;
+            this.chbIsVisible.Text = "Is it visible?";
+            this.chbIsVisible.UseVisualStyleBackColor = true;
             // 
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(318, 32);
+            this.lbID.Location = new System.Drawing.Point(198, 28);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(11, 16);
+            this.lbID.Size = new System.Drawing.Size(13, 20);
             this.lbID.TabIndex = 13;
             this.lbID.Text = "-";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 32);
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(174, 28);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 16);
+            this.label6.Size = new System.Drawing.Size(22, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "ID";
-            // 
-            // dgvCategory
-            // 
-            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategory.Location = new System.Drawing.Point(443, 74);
-            this.dgvCategory.Name = "dgvCategory";
-            this.dgvCategory.RowHeadersWidth = 51;
-            this.dgvCategory.RowTemplate.Height = 24;
-            this.dgvCategory.Size = new System.Drawing.Size(308, 189);
-            this.dgvCategory.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 73);
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(19, 67);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
+            this.label5.Size = new System.Drawing.Size(44, 20);
             this.label5.TabIndex = 6;
             this.label5.Text = "Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 118);
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(19, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.Size = new System.Drawing.Size(80, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Description";
             // 
-            // checkBox1
+            // dgvCategory
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(43, 164);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(97, 20);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Is it visible?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Location = new System.Drawing.Point(378, 58);
+            this.dgvCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.RowHeadersWidth = 51;
+            this.dgvCategory.RowTemplate.Height = 24;
+            this.dgvCategory.Size = new System.Drawing.Size(264, 168);
+            this.dgvCategory.TabIndex = 11;
             // 
-            // textBox1
+            // btnCancel
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(235, 22);
-            this.textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(154, 118);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(235, 66);
-            this.textBox2.TabIndex = 17;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(527, 283);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 23);
-            this.btnSave.TabIndex = 18;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(254, 283);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(114, 23);
-            this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(541, 249);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 36);
+            this.btnCancel.TabIndex = 38;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(388, 283);
+            this.btnDelete.BackColor = System.Drawing.Color.Tomato;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(282, 249);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 23);
-            this.btnDelete.TabIndex = 20;
+            this.btnDelete.Size = new System.Drawing.Size(86, 36);
+            this.btnDelete.TabIndex = 37;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(150, 249);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(86, 36);
+            this.btnUpdate.TabIndex = 36;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(414, 249);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(86, 36);
+            this.btnSave.TabIndex = 35;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(18, 249);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 36);
+            this.btnAdd.TabIndex = 34;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // CategoryManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 340);
+            this.ClientSize = new System.Drawing.Size(653, 297);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gbDate);
+            this.Controls.Add(this.gbData);
             this.Controls.Add(this.dgvCategory);
-            this.Controls.Add(this.button4);
+            this.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CategoryManagement";
-            this.Text = "CategoryManagement";
-            this.gbDate.ResumeLayout(false);
-            this.gbDate.PerformLayout();
+            this.Text = "Categories Management";
+            this.gbData.ResumeLayout(false);
+            this.gbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,18 +253,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbDate;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox gbData;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvCategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.CheckBox chbIsVisible;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

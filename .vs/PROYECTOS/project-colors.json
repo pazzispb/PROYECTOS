@@ -5,7 +5,12 @@
       "ProjectGuid": "dfdd1d36-d503-4f9d-8cac-e3dd1d6f39af",
       "DisplayName": "CRUD_CEDULA",
       "ColorIndex": 0
+    },
+    "47f5c5dc-d6f6-43fa-99cb-865ffae8826f": {
+      "ProjectGuid": "47f5c5dc-d6f6-43fa-99cb-865ffae8826f",
+      "DisplayName": "CONTROL_GASTOS",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

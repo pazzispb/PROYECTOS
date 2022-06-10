@@ -17,5 +17,18 @@ namespace CONTROL_GASTOS
         {
             InitializeComponent();
         }
+
+        private void btnCategoryManagement_Click(object sender, EventArgs e)
+        {
+            var obj = new CategoryManagement();
+            obj.ShowDialog();
+        }
+
+        private void btnConceptManagement_Click(object sender, EventArgs e)
+        {
+            var obj = new ConceptManagement();
+            obj.ShowDialog();
+        }
+
     }
 }

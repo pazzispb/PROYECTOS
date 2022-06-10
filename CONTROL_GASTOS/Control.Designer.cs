@@ -28,223 +28,284 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmbConcept = new System.Windows.Forms.ComboBox();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.btnCategoryManagement = new System.Windows.Forms.Button();
-            this.btnConceptManagement = new System.Windows.Forms.Button();
-            this.dgvExpenses = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.gbData = new System.Windows.Forms.GroupBox();
             this.lbID = new System.Windows.Forms.Label();
-            this.mtxtAmount = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnConceptManagement = new System.Windows.Forms.Button();
+            this.btnCategoryManagement = new System.Windows.Forms.Button();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.cmbConcept = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvExpenses = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbData
             // 
-            this.groupBox1.Controls.Add(this.mtxtAmount);
-            this.groupBox1.Controls.Add(this.lbID);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnConceptManagement);
-            this.groupBox1.Controls.Add(this.btnCategoryManagement);
-            this.groupBox1.Controls.Add(this.dtpDate);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbCategory);
-            this.groupBox1.Controls.Add(this.cmbConcept);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 56);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 238);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Enter the expense\'s information";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(298, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Expenses control";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Category";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Amount";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Concept";
-            // 
-            // cmbConcept
-            // 
-            this.cmbConcept.FormattingEnabled = true;
-            this.cmbConcept.Location = new System.Drawing.Point(159, 156);
-            this.cmbConcept.Name = "cmbConcept";
-            this.cmbConcept.Size = new System.Drawing.Size(156, 24);
-            this.cmbConcept.TabIndex = 4;
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(159, 110);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(156, 24);
-            this.cmbCategory.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Date";
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Location = new System.Drawing.Point(159, 66);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 22);
-            this.dtpDate.TabIndex = 7;
-            // 
-            // btnCategoryManagement
-            // 
-            this.btnCategoryManagement.Location = new System.Drawing.Point(322, 110);
-            this.btnCategoryManagement.Name = "btnCategoryManagement";
-            this.btnCategoryManagement.Size = new System.Drawing.Size(37, 23);
-            this.btnCategoryManagement.TabIndex = 8;
-            this.btnCategoryManagement.Text = "...";
-            this.btnCategoryManagement.UseVisualStyleBackColor = true;
-            // 
-            // btnConceptManagement
-            // 
-            this.btnConceptManagement.Location = new System.Drawing.Point(321, 156);
-            this.btnConceptManagement.Name = "btnConceptManagement";
-            this.btnConceptManagement.Size = new System.Drawing.Size(37, 23);
-            this.btnConceptManagement.TabIndex = 9;
-            this.btnConceptManagement.Text = "...";
-            this.btnConceptManagement.UseVisualStyleBackColor = true;
-            // 
-            // dgvExpenses
-            // 
-            this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpenses.Location = new System.Drawing.Point(437, 65);
-            this.dgvExpenses.Name = "dgvExpenses";
-            this.dgvExpenses.RowHeadersWidth = 51;
-            this.dgvExpenses.RowTemplate.Height = 24;
-            this.dgvExpenses.Size = new System.Drawing.Size(328, 229);
-            this.dgvExpenses.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(279, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "ID";
+            this.gbData.Controls.Add(this.txtAmount);
+            this.gbData.Controls.Add(this.lbID);
+            this.gbData.Controls.Add(this.label6);
+            this.gbData.Controls.Add(this.btnConceptManagement);
+            this.gbData.Controls.Add(this.btnCategoryManagement);
+            this.gbData.Controls.Add(this.dtpDate);
+            this.gbData.Controls.Add(this.label5);
+            this.gbData.Controls.Add(this.cmbCategory);
+            this.gbData.Controls.Add(this.cmbConcept);
+            this.gbData.Controls.Add(this.label4);
+            this.gbData.Controls.Add(this.label3);
+            this.gbData.Controls.Add(this.label2);
+            this.gbData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbData.Location = new System.Drawing.Point(9, 56);
+            this.gbData.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gbData.Name = "gbData";
+            this.gbData.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.gbData.Size = new System.Drawing.Size(340, 238);
+            this.gbData.TabIndex = 0;
+            this.gbData.TabStop = false;
+            this.gbData.Text = "Enter the expense\'s information";
             // 
             // lbID
             // 
             this.lbID.AutoSize = true;
-            this.lbID.Location = new System.Drawing.Point(318, 32);
+            this.lbID.Location = new System.Drawing.Point(238, 32);
+            this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(11, 16);
+            this.lbID.Size = new System.Drawing.Size(13, 20);
             this.lbID.TabIndex = 13;
             this.lbID.Text = "-";
             // 
-            // mtxtAmount
+            // label6
             // 
-            this.mtxtAmount.Location = new System.Drawing.Point(159, 200);
-            this.mtxtAmount.Name = "mtxtAmount";
-            this.mtxtAmount.Size = new System.Drawing.Size(200, 22);
-            this.mtxtAmount.TabIndex = 15;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(209, 32);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(22, 20);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "ID";
+            // 
+            // btnConceptManagement
+            // 
+            this.btnConceptManagement.Location = new System.Drawing.Point(281, 160);
+            this.btnConceptManagement.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnConceptManagement.Name = "btnConceptManagement";
+            this.btnConceptManagement.Size = new System.Drawing.Size(40, 28);
+            this.btnConceptManagement.TabIndex = 9;
+            this.btnConceptManagement.Text = "...";
+            this.btnConceptManagement.UseVisualStyleBackColor = true;
+            this.btnConceptManagement.Click += new System.EventHandler(this.btnConceptManagement_Click);
+            // 
+            // btnCategoryManagement
+            // 
+            this.btnCategoryManagement.Location = new System.Drawing.Point(281, 110);
+            this.btnCategoryManagement.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCategoryManagement.Name = "btnCategoryManagement";
+            this.btnCategoryManagement.Size = new System.Drawing.Size(40, 32);
+            this.btnCategoryManagement.TabIndex = 8;
+            this.btnCategoryManagement.Text = "...";
+            this.btnCategoryManagement.UseVisualStyleBackColor = true;
+            this.btnCategoryManagement.Click += new System.EventHandler(this.btnCategoryManagement_Click);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(105, 66);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(216, 26);
+            this.dtpDate.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 69);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Date";
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(105, 110);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(172, 28);
+            this.cmbCategory.TabIndex = 5;
+            // 
+            // cmbConcept
+            // 
+            this.cmbConcept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbConcept.FormattingEnabled = true;
+            this.cmbConcept.Location = new System.Drawing.Point(105, 158);
+            this.cmbConcept.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbConcept.Name = "cmbConcept";
+            this.cmbConcept.Size = new System.Drawing.Size(172, 28);
+            this.cmbConcept.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 162);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Concept";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 203);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Amount";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Category";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(261, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Expenses control";
+            // 
+            // dgvExpenses
+            // 
+            this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExpenses.Location = new System.Drawing.Point(353, 65);
+            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvExpenses.Name = "dgvExpenses";
+            this.dgvExpenses.RowHeadersWidth = 51;
+            this.dgvExpenses.RowTemplate.Height = 24;
+            this.dgvExpenses.Size = new System.Drawing.Size(373, 229);
+            this.dgvExpenses.TabIndex = 11;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(428, 316);
+            this.btnDelete.BackColor = System.Drawing.Color.Tomato;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(327, 313);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 23);
-            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Size = new System.Drawing.Size(86, 36);
+            this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(294, 316);
+            this.btnUpdate.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(195, 313);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(114, 23);
-            this.btnUpdate.TabIndex = 23;
+            this.btnUpdate.Size = new System.Drawing.Size(86, 36);
+            this.btnUpdate.TabIndex = 31;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(567, 316);
+            this.btnSave.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(459, 313);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 23);
-            this.btnSave.TabIndex = 22;
+            this.btnSave.Size = new System.Drawing.Size(86, 36);
+            this.btnSave.TabIndex = 30;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnAdd
             // 
-            this.button4.Location = new System.Drawing.Point(162, 316);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 23);
-            this.button4.TabIndex = 21;
-            this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(63, 313);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(86, 36);
+            this.btnAdd.TabIndex = 29;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(586, 313);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(86, 36);
+            this.btnCancel.TabIndex = 33;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(105, 203);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(212, 26);
+            this.txtAmount.TabIndex = 17;
             // 
             // Control
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 373);
+            this.ClientSize = new System.Drawing.Size(737, 373);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbData);
             this.Controls.Add(this.dgvExpenses);
+            this.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Control";
             this.Text = "Expenses control";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbData.ResumeLayout(false);
+            this.gbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -253,7 +314,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbData;
         private System.Windows.Forms.Button btnConceptManagement;
         private System.Windows.Forms.Button btnCategoryManagement;
         private System.Windows.Forms.DateTimePicker dtpDate;
@@ -267,11 +328,12 @@
         private System.Windows.Forms.DataGridView dgvExpenses;
         private System.Windows.Forms.Label lbID;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox mtxtAmount;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtAmount;
     }
 }
 
