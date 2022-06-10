@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbData = new System.Windows.Forms.GroupBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.lbID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnConceptManagement = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.gbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,7 @@
             this.gbData.Controls.Add(this.label4);
             this.gbData.Controls.Add(this.label3);
             this.gbData.Controls.Add(this.label2);
+            this.gbData.Enabled = false;
             this.gbData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbData.Location = new System.Drawing.Point(9, 56);
             this.gbData.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -75,6 +76,14 @@
             this.gbData.TabIndex = 0;
             this.gbData.TabStop = false;
             this.gbData.Text = "Enter the expense\'s information";
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(105, 203);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(212, 26);
+            this.txtAmount.TabIndex = 17;
             // 
             // lbID
             // 
@@ -206,12 +215,12 @@
             // dgvExpenses
             // 
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpenses.Location = new System.Drawing.Point(353, 65);
+            this.dgvExpenses.Location = new System.Drawing.Point(369, 65);
             this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvExpenses.Name = "dgvExpenses";
             this.dgvExpenses.RowHeadersWidth = 51;
             this.dgvExpenses.RowTemplate.Height = 24;
-            this.dgvExpenses.Size = new System.Drawing.Size(373, 229);
+            this.dgvExpenses.Size = new System.Drawing.Size(357, 229);
             this.dgvExpenses.TabIndex = 11;
             // 
             // btnDelete
@@ -226,6 +235,7 @@
             this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -239,6 +249,7 @@
             this.btnUpdate.TabIndex = 31;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -252,6 +263,7 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -265,6 +277,7 @@
             this.btnAdd.TabIndex = 29;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
@@ -278,14 +291,7 @@
             this.btnCancel.TabIndex = 33;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Location = new System.Drawing.Point(105, 203);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(212, 26);
-            this.txtAmount.TabIndex = 17;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Control
             // 
@@ -303,6 +309,7 @@
             this.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "Control";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Expenses control";
             this.gbData.ResumeLayout(false);
             this.gbData.PerformLayout();
