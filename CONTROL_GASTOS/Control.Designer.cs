@@ -167,6 +167,7 @@
             this.cmbConcept.Name = "cmbConcept";
             this.cmbConcept.Size = new System.Drawing.Size(172, 28);
             this.cmbConcept.TabIndex = 4;
+            this.cmbConcept.Click += new System.EventHandler(this.cmbConcept_Click);
             // 
             // label4
             // 

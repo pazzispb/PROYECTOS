@@ -1,8 +1,11 @@
-﻿using System;
+﻿using CONTROL_GASTOS.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +16,7 @@ namespace CONTROL_GASTOS
     public partial class ConceptManagement : Form
     {
         FormMode mode = FormMode.None;
+        int id = 0;// Concept's Id to be deleted or modified
         public ConceptManagement()
         {
             InitializeComponent();
@@ -28,7 +32,8 @@ namespace CONTROL_GASTOS
         }
         int GetNextID()
         {
-            return 1;
+            var conceptList = ReadJson();
+            return conceptList.Count() + 1;
         }
         void ClearFields()
         {
@@ -48,32 +53,121 @@ namespace CONTROL_GASTOS
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
             GetConcepts();
+            id = 0;
         }
-
+        List<Concept> ReadJson()
+        {
+            var json = string.Empty;
+            var conceptList = new List<Concept>();
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                conceptList = JsonConvert.DeserializeObject<List<Concept>>(json);
+            }
+            return conceptList;
+        }
+        void WriteJson(List<Concept> conceptList)
+        {
+            var json = string.Empty;
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
+            json = JsonConvert.SerializeObject(conceptList);
+            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
+            sw.Write(json);
+            sw.Close();
+        }
         void GetConcepts()
         {
-            //Add implementation with JSON
+            var conceptList = ReadJson();
+            dgvConcept.DataSource = null;
+            dgvConcept.DataSource = conceptList;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var conceptList = ReadJson();
+            var concept = new Concept();
             switch (mode)
             {
                 case FormMode.Adding:
                     {
+                        if (FieldsFilled())
+                        {
+                            var conceptCount = conceptList.Count(x => x.Name.ToString().Trim().ToLower() == txtName.Text.Trim().ToLower());
+                            if (conceptCount > 0)
+                            {
+                                MessageBox.Show("The concept already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                break;
+                            }
+                            concept = new Concept
+                            {
+                                Id = int.Parse(lbID.Text),
+                                Name = txtName.Text,
+                                Description = txtDescription.Text,
+                                IsEnabled = chbIsVisible.Checked,
+                                CreatedDate = DateTime.Now
+                            };
+                            conceptList.Add(concept);
+                            WriteJson(conceptList);
+                            MessageBox.Show("Concept added", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must fill every field", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 case FormMode.Deleting:
                     {
+                        if(id != 0)
+                        {
+                            conceptList.Remove(conceptList.FirstOrDefault(x => x.Id == id));
+                            WriteJson(conceptList);
+                            MessageBox.Show("Concept deleted", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must select a concept first", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 case FormMode.Updating:
                     {
+                        if (id != 0)
+                        {
+                            var conceptCount = conceptList.Count(x => (x.Name.ToString().Trim().ToLower() == txtName.Text.Trim().ToLower()) && (x.Id != int.Parse(lbID.Text)));
+                            if (conceptCount > 0)
+                            {
+                                MessageBox.Show("The concept already exists", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                                break;
+                            }
+                            concept = new Concept
+                            {
+                                Id = int.Parse(lbID.Text),
+                                Name = txtName.Text,
+                                Description = txtDescription.Text,
+                                CreatedDate = conceptList.FirstOrDefault(x => x.Id == id).CreatedDate,
+                                IsEnabled = chbIsVisible.Checked,
+                                ModifiedDate = DateTime.Now
+                            };
+                            conceptList.Remove(conceptList.FirstOrDefault(x => x.Id == id));
+                            conceptList.Add(concept);
+                            WriteJson(conceptList);
+                            MessageBox.Show("Concept modified", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must select a concept first", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 default:
                     {
-                        MessageBox.Show("Opción Inválida");
+                        MessageBox.Show("Invalid Option");
                         break;
                     }
             }
@@ -84,17 +178,21 @@ namespace CONTROL_GASTOS
             mode = FormMode.None;
             SetInitialState();
         }
-
+        bool FieldsFilled()
+        {
+            return (!String.IsNullOrWhiteSpace(txtName.Text) || !String.IsNullOrWhiteSpace(txtDescription.Text));
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvConcept.Rows.Count > 0)
             {
                 mode = FormMode.Deleting;
-                MessageBox.Show("Seleccione una entrada a eliminar dentro de la tabla.");
+                MessageBox.Show("Select a record to delete from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
+                btnSave.Enabled = true;
             }
-            else MessageBox.Show("No hay registros para eliminar");
+            else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -102,11 +200,11 @@ namespace CONTROL_GASTOS
             if (dgvConcept.Rows.Count > 0)
             {
                 mode = FormMode.Updating;
-                MessageBox.Show("Seleccione una entrada a modificar dentro de la tabla.");
+                MessageBox.Show("Select a record to modify from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
             }
-            else MessageBox.Show("No hay registros para modificar");
+            else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -117,6 +215,31 @@ namespace CONTROL_GASTOS
             lbID.Text = GetNextID().ToString();
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
+        }
+
+        private void dgvConcept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (mode == FormMode.Updating || mode == FormMode.Deleting)
+            {
+                if (MessageBox.Show("Do you wish to select the current concept?",
+                    "CONFIRMATION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    id = int.Parse(dgvConcept.CurrentRow.Cells[0].Value.ToString());
+                    if (mode == FormMode.Updating)
+                    {
+                        var concept = ReadJson().FirstOrDefault(x => x.Id == id);
+                        txtDescription.Text = concept.Description;
+                        txtName.Text = concept.Name;
+                        lbID.Text = concept.Id.ToString();
+                        chbIsVisible.Checked = concept.IsEnabled;
+                        gbData.Enabled = true;
+                        UnableButtons();
+                        btnSave.Enabled = true;
+                        btnCancel.Enabled = true;
+                    }
+                    MessageBox.Show("Press the Save button to complete the changes", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }
