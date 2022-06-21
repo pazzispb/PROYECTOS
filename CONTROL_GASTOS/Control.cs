@@ -68,7 +68,7 @@ namespace CONTROL_GASTOS
         {
             txtAmount.Clear();
             lbID.Text = "-";
-            if(cmbCategory.Items.Count>0) cmbCategory.SelectedIndex = 0;
+            if (cmbCategory.Items.Count > 0) cmbCategory.SelectedIndex = 0;
             if (cmbConcept.Items.Count > 0) cmbConcept.SelectedIndex = 0;
             dtpDate.Value = DateTime.Now;
         }
@@ -175,10 +175,10 @@ namespace CONTROL_GASTOS
                 json = File.ReadAllText(pathFile, Encoding.UTF8);
                 conceptList = JsonConvert.DeserializeObject<List<Concept>>(json);
             }
-            cmbConcept.DataSource = null;
-            cmbConcept.DataSource = conceptList;
-            cmbConcept.DisplayMember = "Name";
-            cmbConcept.ValueMember = "Id";
+            cmbCategory.DataSource = null;
+            cmbCategory.DataSource = conceptList;
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
         }
     }
 }
