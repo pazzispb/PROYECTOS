@@ -54,7 +54,7 @@
             this.label1.Location = new System.Drawing.Point(194, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(312, 31);
+            this.label1.Size = new System.Drawing.Size(378, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "Categories Management";
             // 
@@ -91,7 +91,7 @@
             this.txtName.Location = new System.Drawing.Point(112, 64);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(212, 26);
+            this.txtName.Size = new System.Drawing.Size(212, 30);
             this.txtName.TabIndex = 16;
             // 
             // chbIsVisible
@@ -101,7 +101,7 @@
             this.chbIsVisible.Location = new System.Drawing.Point(23, 28);
             this.chbIsVisible.Margin = new System.Windows.Forms.Padding(2);
             this.chbIsVisible.Name = "chbIsVisible";
-            this.chbIsVisible.Size = new System.Drawing.Size(104, 24);
+            this.chbIsVisible.Size = new System.Drawing.Size(123, 28);
             this.chbIsVisible.TabIndex = 15;
             this.chbIsVisible.Text = "Is it visible?";
             this.chbIsVisible.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.lbID.Location = new System.Drawing.Point(198, 28);
             this.lbID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(13, 20);
+            this.lbID.Size = new System.Drawing.Size(15, 24);
             this.lbID.TabIndex = 13;
             this.lbID.Text = "-";
             // 
@@ -123,7 +123,7 @@
             this.label6.Location = new System.Drawing.Point(174, 28);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 20);
+            this.label6.Size = new System.Drawing.Size(26, 24);
             this.label6.TabIndex = 12;
             this.label6.Text = "ID";
             // 
@@ -134,7 +134,7 @@
             this.label5.Location = new System.Drawing.Point(19, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 20);
+            this.label5.Size = new System.Drawing.Size(54, 24);
             this.label5.TabIndex = 6;
             this.label5.Text = "Name";
             // 
@@ -145,7 +145,7 @@
             this.label2.Location = new System.Drawing.Point(19, 122);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
+            this.label2.Size = new System.Drawing.Size(98, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Description";
             // 
@@ -159,6 +159,7 @@
             this.dgvCategory.RowTemplate.Height = 24;
             this.dgvCategory.Size = new System.Drawing.Size(264, 168);
             this.dgvCategory.TabIndex = 11;
+            this.dgvCategory.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCategory_RowHeaderMouseClick);
             // 
             // btnCancel
             // 
@@ -232,7 +233,7 @@
             // 
             // CategoryManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 297);
             this.Controls.Add(this.btnCancel);

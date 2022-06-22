@@ -203,6 +203,7 @@ namespace CONTROL_GASTOS
                 MessageBox.Show("Select a record to modify from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
+                btnSave.Enabled = true;
             }
             else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }

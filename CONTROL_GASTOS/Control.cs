@@ -168,17 +168,22 @@ namespace CONTROL_GASTOS
         void GetCategories()
         {
             var json = string.Empty;
-            var conceptList = new List<Concept>();
+            var categoryList = new List<Concept>();
             var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\categories.json";
             if (File.Exists(pathFile))
             {
                 json = File.ReadAllText(pathFile, Encoding.UTF8);
-                conceptList = JsonConvert.DeserializeObject<List<Concept>>(json);
+                categoryList = JsonConvert.DeserializeObject<List<Concept>>(json);
             }
             cmbCategory.DataSource = null;
-            cmbCategory.DataSource = conceptList;
+            cmbCategory.DataSource = categoryList.FindAll(x => x.IsEnabled == true);
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
+        }
+
+        private void cmbCategory_Click(object sender, EventArgs e)
+        {
+            GetCategories();
         }
     }
 }

@@ -13,5 +13,7 @@ namespace CONTROL_GASTOS.Models
         public string Description { get; set; }
         public bool IsEnabled { get; set; }
         public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
+
     }
 }
