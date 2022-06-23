@@ -94,10 +94,12 @@ namespace CRUD_CEDULA_JSON
             mtxtCedula.Clear();
             mtxtCedulaAnterior.Clear();
             pbFoto.Image = null;
+            pbFoto.ImageLocation = null;
+
         }
         int SiguienteID()
         {
-            return LeerJson().Count() + 1;
+            return LeerJson().Max(x=> x.Id) + 1;
         }
         void ObtenerCiudadanos()
         {
@@ -144,14 +146,47 @@ namespace CRUD_CEDULA_JSON
                             EstadoInicial();
                             break;
                         }
-                    case FormMode.Deleting:
+                    case FormMode.Updating:
                         {
-
+                            if (CamposVacios()) break;
+                            var Objeto = new Ciudadano
+                            {
+                                Id = id,
+                                Cedula = mtxtCedula.Text,
+                                Nombres = txtNombres.Text,
+                                Apellidos = txtApellidos.Text,
+                                LugarNacimiento = txtLugarNacimiento.Text,
+                                FechaNacimiento = dtpFechaNacimiento.Value,
+                                Nacionalidad = txtNacionalidad.Text,
+                                Sexo = Sexo,
+                                Sangre = cbSangre.Text,
+                                EstadoCivil = cbEstadoCivil.Text,
+                                FechaExpiracion = dtpFechaExpiracion.Value,
+                                URLFoto = URLImagen,
+                                CedulaAnterior = mtxtCedulaAnterior.Text,
+                                ColegioElectoral = int.Parse(txtColegioElectoral.Text),
+                                UbicacionColegio = txtUbicacionColegio.Text,
+                                DireccionResidencia = txtDireccionResidencia.Text,
+                                Sector = txtSector.Text,
+                                Municipio = txtMunicipio.Text,
+                                RegistroNacimiento = txtRegistroNacimiento.Text,
+                                CodigoPostal = int.Parse(txtColegioElectoral.Text),
+                                FechaRegistro = DateTime.Now
+                            };
+                            var Lista = LeerJson();
+                            Lista.Remove(Lista.FirstOrDefault(x=>x.Id == id));
+                            Lista.Add(Objeto);
+                            EscribirJson(Lista);
+                            MessageBox.Show("Ciudadano modificado con éxito", "NOTIFICACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             EstadoInicial();
                             break;
                         }
-                    case FormMode.Updating:
+                    case FormMode.Deleting:
                         {
+                            var Lista = LeerJson();
+                            Lista.Remove(Lista.FirstOrDefault(x => x.Id == id));
+                            EscribirJson(Lista);
+                            MessageBox.Show("Ciudadano eliminado con éxito", "NOTIFICACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             EstadoInicial();
                             break;
                         }
@@ -166,7 +201,7 @@ namespace CRUD_CEDULA_JSON
         {
             foreach (Control c in gbDatosCedula.Controls)
             {
-                if (c is TextBox || c is MaskedTextBox)
+                if (c is TextBox || c is MaskedTextBox && c.Name != "mtxtCedulaAnterior")
                     if (String.IsNullOrWhiteSpace(c.Text))
                     {
                         MessageBox.Show("Hay campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -220,18 +255,18 @@ namespace CRUD_CEDULA_JSON
                 id = int.Parse(dgvCiudadanos.CurrentRow.Cells[0].Value.ToString());
                 var ciudadano = LeerJson().FirstOrDefault(x=> x.Id == id);
                 txtApellidos.Text = ciudadano.Apellidos;
-                txtCodigoPostal.Text = ciudadano.Apellidos;
-                txtColegioElectoral.Text = ciudadano.Apellidos;
-                txtDireccionResidencia.Text = ciudadano.Apellidos;
-                txtLugarNacimiento.Text = ciudadano.Apellidos;
-                txtMunicipio.Text = ciudadano.Apellidos;
-                txtNacionalidad.Text = ciudadano.Apellidos;
-                txtNombres.Text = ciudadano.Apellidos;
-                txtRegistroNacimiento.Text = ciudadano.Apellidos;
-                txtSector.Text = ciudadano.Apellidos;
-                txtUbicacionColegio.Text = ciudadano.Apellidos;
-                mtxtCedula.Text = ciudadano.Apellidos;
-                mtxtCedulaAnterior.Text = ciudadano.Apellidos;
+                txtCodigoPostal.Text = ciudadano.CodigoPostal.ToString();
+                txtColegioElectoral.Text = ciudadano.ColegioElectoral.ToString();
+                txtDireccionResidencia.Text = ciudadano.DireccionResidencia;
+                txtLugarNacimiento.Text = ciudadano.LugarNacimiento;
+                txtMunicipio.Text = ciudadano.Municipio;
+                txtNacionalidad.Text = ciudadano.Nacionalidad;
+                txtNombres.Text = ciudadano.Nombres;
+                txtRegistroNacimiento.Text = ciudadano.RegistroNacimiento;
+                txtSector.Text = ciudadano.Sector;
+                txtUbicacionColegio.Text = ciudadano.UbicacionColegio;
+                mtxtCedula.Text = ciudadano.Cedula;
+                mtxtCedulaAnterior.Text = ciudadano.CedulaAnterior;
                 pbFoto.ImageLocation = ciudadano.URLFoto;
                 if (ciudadano.Sexo == 'M') rdbMasculino.Checked = true;
                 else rdbFemenino.Checked = true;
@@ -239,6 +274,10 @@ namespace CRUD_CEDULA_JSON
                 dtpFechaExpiracion.Value = ciudadano.FechaExpiracion;
                 cbEstadoCivil.SelectedIndex = cbEstadoCivil.Items.IndexOf(ciudadano.EstadoCivil);
                 cbSangre.SelectedIndex = cbSangre.Items.IndexOf(ciudadano.Sangre);
+                DeshabilitarBotones();
+                btnGuardar.Enabled = true;
+                btnCancelar.Enabled = true;
+                if (mode == FormMode.Updating) gbDatosCedula.Enabled = true;
             }
         }
     }
