@@ -224,6 +224,7 @@
             this.dgvExpenses.RowTemplate.Height = 24;
             this.dgvExpenses.Size = new System.Drawing.Size(357, 229);
             this.dgvExpenses.TabIndex = 11;
+            this.dgvExpenses.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvExpenses_RowHeaderMouseClick);
             // 
             // btnDelete
             // 

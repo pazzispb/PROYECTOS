@@ -190,7 +190,6 @@ namespace CONTROL_GASTOS
                 MessageBox.Show("Select a record to delete from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
-                btnSave.Enabled = true;
             }
             else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
@@ -203,7 +202,6 @@ namespace CONTROL_GASTOS
                 MessageBox.Show("Select a record to modify from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
-                btnSave.Enabled = true;
             }
             else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
@@ -226,18 +224,15 @@ namespace CONTROL_GASTOS
                     "CONFIRMATION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     id = int.Parse(dgvConcept.CurrentRow.Cells[0].Value.ToString());
-                    if (mode == FormMode.Updating)
-                    {
-                        var concept = ReadJson().FirstOrDefault(x => x.Id == id);
-                        txtDescription.Text = concept.Description;
-                        txtName.Text = concept.Name;
-                        lbID.Text = concept.Id.ToString();
-                        chbIsVisible.Checked = concept.IsEnabled;
-                        gbData.Enabled = true;
-                        UnableButtons();
-                        btnSave.Enabled = true;
-                        btnCancel.Enabled = true;
-                    }
+                    var concept = ReadJson().FirstOrDefault(x => x.Id == id);
+                    txtDescription.Text = concept.Description;
+                    txtName.Text = concept.Name;
+                    lbID.Text = concept.Id.ToString();
+                    chbIsVisible.Checked = concept.IsEnabled;
+                    if (mode == FormMode.Updating) gbData.Enabled = true;
+                    UnableButtons();
+                    btnSave.Enabled = true;
+                    btnCancel.Enabled = true;
                     MessageBox.Show("Press the Save button to complete the changes", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

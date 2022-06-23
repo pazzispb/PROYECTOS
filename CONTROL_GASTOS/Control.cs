@@ -31,9 +31,8 @@ namespace CONTROL_GASTOS
         }
         int GetNextID()
         {
-            //var conceptList = ReadJson();
-            //return conceptList.Count() + 1;
-            return 1;
+            var expenseList = ReadJson();
+            return expenseList.Count() + 1;
         }
         private void btnCategoryManagement_Click(object sender, EventArgs e)
         {
@@ -89,18 +88,20 @@ namespace CONTROL_GASTOS
         }
         void GetExpenses()
         {
-            //Add implementation with JSON
+            var expenseList = ReadJson();
+            dgvExpenses.DataSource = null;
+            dgvExpenses.DataSource = expenseList;
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {   
             if (dgvExpenses.Rows.Count > 0)
             {
                 mode = FormMode.Updating;
-                MessageBox.Show("Seleccione una entrada a modificar dentro de la tabla.");
+                MessageBox.Show("Select a record to modify from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
             }
-            else MessageBox.Show("No hay registros para modificar");
+            else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -108,11 +109,11 @@ namespace CONTROL_GASTOS
             if (dgvExpenses.Rows.Count > 0)
             {
                 mode = FormMode.Deleting;
-                MessageBox.Show("Seleccione una entrada a eliminar dentro de la tabla.");
+                MessageBox.Show("Select a record to delecte from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
             }
-            else MessageBox.Show("No hay registros para eliminar");
+            else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -120,23 +121,98 @@ namespace CONTROL_GASTOS
             mode = FormMode.None;
             SetInitialState();
         }
-
+        bool FieldsFilled()
+        {
+            return (!String.IsNullOrWhiteSpace(txtAmount.Text) && cmbConcept.Items.Count>0 && cmbCategory.Items.Count > 0);
+        }
+        List<Expense> ReadJson()
+        {
+            var expenseList = new List<Expense>();
+            var json = string.Empty;
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                expenseList = JsonConvert.DeserializeObject<List<Expense>>(json);
+            }
+            return expenseList;
+        }
+        void WriteJson(List<Expense> expenseList)
+        {
+            var json = string.Empty;
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
+            json = JsonConvert.SerializeObject(expenseList);
+            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
+            sw.Write(json);
+            sw.Close();
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            var expenseList = ReadJson();
+            var expense = new Expense();
             switch (mode)
             {
                 case FormMode.Adding:
                     {
-                        SetInitialState();
+                        if (FieldsFilled())
+                        {
+                            expense = new Expense
+                            {
+                                Id = int.Parse(lbID.Text),
+                                Amount = double.Parse(txtAmount.Text),
+                                CategoryID = Convert.ToInt32(cmbCategory.SelectedValue),
+                                ConceptID = Convert.ToInt32(cmbConcept.SelectedValue),
+                                CreatedDate = dtpDate.Value
+                            };
+                            expenseList.Add(expense);
+                            WriteJson(expenseList);
+                            MessageBox.Show("Expense added", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must fill every field", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 case FormMode.Deleting:
                     {
-                        SetInitialState();
+                        if (id != 0)
+                        {
+                            expenseList.Remove(expenseList.FirstOrDefault(x => x.Id == id));
+                            WriteJson(expenseList);
+                            MessageBox.Show("Expense deleted", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must select an expense first", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 case FormMode.Updating:
                     {
+                        if (id != 0)
+                        {
+                            expense = new Expense
+                            {
+                                Id = int.Parse(lbID.Text),
+                                Amount = double.Parse(txtAmount.Text),
+                                CategoryID = Convert.ToInt32(cmbCategory.SelectedValue),
+                                ConceptID = Convert.ToInt32(cmbConcept.SelectedValue),
+                                CreatedDate = dtpDate.Value,
+                                ModifiedDate = DateTime.Now
+                            };
+                            expenseList.Remove(expenseList.FirstOrDefault(x => x.Id == id));
+                            expenseList.Add(expense);
+                            WriteJson(expenseList);
+                            MessageBox.Show("Expense modified", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SetInitialState();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You must select an expense first", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        }
                         break;
                     }
                 default:
@@ -180,10 +256,32 @@ namespace CONTROL_GASTOS
             cmbCategory.DisplayMember = "Name";
             cmbCategory.ValueMember = "Id";
         }
-
         private void cmbCategory_Click(object sender, EventArgs e)
         {
             GetCategories();
+        }
+
+        private void dgvExpenses_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (mode == FormMode.Updating || mode == FormMode.Deleting)
+            {
+                if (MessageBox.Show("Do you wish to select the current expense?",
+                    "CONFIRMATION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    id = int.Parse(dgvExpenses.CurrentRow.Cells[0].Value.ToString());
+                    
+                    var expense = ReadJson().FirstOrDefault(x => x.Id == id);
+                    txtAmount.Text = expense.Amount.ToString();
+                    cmbConcept.SelectedValue = expense.ConceptID;
+                    cmbCategory.SelectedValue = expense.CategoryID;
+                    lbID.Text = expense.Id.ToString();
+                    if(mode == FormMode.Updating) gbData.Enabled = true;
+                    UnableButtons();
+                    btnSave.Enabled = true;
+                    btnCancel.Enabled = true;
+                    MessageBox.Show("Press the Save button to complete the changes", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

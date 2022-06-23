@@ -17,7 +17,6 @@ namespace CONTROL_GASTOS
     {
         FormMode mode = FormMode.None;
         int id = 0;// Category's Id to be deleted or modified
-
         public CategoryManagement()
         {
             InitializeComponent();
@@ -33,8 +32,8 @@ namespace CONTROL_GASTOS
         }
         int GetNextID()
         {
-            var cateogoryList = ReadJson();
-            return cateogoryList.Count() + 1;
+            var categoryList = ReadJson();
+            return categoryList.Count() + 1;
         }
         List<Category> ReadJson()
         {
@@ -191,8 +190,6 @@ namespace CONTROL_GASTOS
                 MessageBox.Show("Select a record to delete from the table", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnableButtons();
                 btnCancel.Enabled = true;
-                btnSave.Enabled = true;
-
             }
             else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
@@ -206,7 +203,7 @@ namespace CONTROL_GASTOS
                 UnableButtons();
                 btnCancel.Enabled = true;
             }
-            else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -227,18 +224,15 @@ namespace CONTROL_GASTOS
                     "CONFIRMATION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     id = int.Parse(dgvCategory.CurrentRow.Cells[0].Value.ToString());
-                    if (mode == FormMode.Updating)
-                    {
-                        var category = ReadJson().FirstOrDefault(x => x.Id == id);
-                        txtDescription.Text = category.Description;
-                        txtName.Text = category.Name;
-                        lbID.Text = category.Id.ToString();
-                        chbIsVisible.Checked = category.IsEnabled;
-                        gbData.Enabled = true;
-                        UnableButtons();
-                        btnSave.Enabled = true;
-                        btnCancel.Enabled = true;
-                    }
+                    var category = ReadJson().FirstOrDefault(x => x.Id == id);
+                    txtDescription.Text = category.Description;
+                    txtName.Text = category.Name;
+                    lbID.Text = category.Id.ToString();
+                    chbIsVisible.Checked = category.IsEnabled;
+                    if (mode == FormMode.Updating) gbData.Enabled = true;
+                    UnableButtons();
+                    btnSave.Enabled = true;
+                    btnCancel.Enabled = true;
                     MessageBox.Show("Press the Save button to complete the changes", "NOTIFICATION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
