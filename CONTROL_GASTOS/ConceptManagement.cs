@@ -83,7 +83,10 @@ namespace CONTROL_GASTOS
             dgvConcept.DataSource = null;
             dgvConcept.DataSource = conceptList;
         }
-
+        bool FieldsFilled()
+        {
+            return (!String.IsNullOrWhiteSpace(txtName.Text) || !String.IsNullOrWhiteSpace(txtDescription.Text));
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             var conceptList = ReadJson();
@@ -173,15 +176,10 @@ namespace CONTROL_GASTOS
                     }
             }
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             mode = FormMode.None;
             SetInitialState();
-        }
-        bool FieldsFilled()
-        {
-            return (!String.IsNullOrWhiteSpace(txtName.Text) || !String.IsNullOrWhiteSpace(txtDescription.Text));
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -194,7 +192,6 @@ namespace CONTROL_GASTOS
             }
             else MessageBox.Show("There are no records to delete", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (dgvConcept.Rows.Count > 0)
@@ -206,7 +203,6 @@ namespace CONTROL_GASTOS
             }
             else MessageBox.Show("There are no records to update", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             mode = FormMode.Adding;
@@ -216,7 +212,6 @@ namespace CONTROL_GASTOS
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
         }
-
         private void dgvConcept_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (mode == FormMode.Updating || mode == FormMode.Deleting)

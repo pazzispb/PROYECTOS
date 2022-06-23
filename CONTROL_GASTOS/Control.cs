@@ -29,21 +29,20 @@ namespace CONTROL_GASTOS
             InitializeComponent();
             SetInitialState();
         }
-        int GetNextID()
+        void GetCategories()
         {
-            var expenseList = ReadJson();
-            return expenseList.Count() + 1;
-        }
-        private void btnCategoryManagement_Click(object sender, EventArgs e)
-        {
-            var obj = new CategoryManagement();
-            obj.ShowDialog();
-        }
-
-        private void btnConceptManagement_Click(object sender, EventArgs e)
-        {
-            var obj = new ConceptManagement();
-            obj.ShowDialog();
+            var json = string.Empty;
+            var categoryList = new List<Concept>();
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\categories.json";
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                categoryList = JsonConvert.DeserializeObject<List<Concept>>(json);
+            }
+            cmbCategory.DataSource = null;
+            cmbCategory.DataSource = categoryList.FindAll(x => x.IsEnabled == true);
+            cmbCategory.DisplayMember = "Name";
+            cmbCategory.ValueMember = "Id";
         }
         void UnableButtons()
         {
@@ -53,15 +52,10 @@ namespace CONTROL_GASTOS
             btnUpdate.Enabled = false;
             btnSave.Enabled = false;
         }
-        
-        private void btnAdd_Click(object sender, EventArgs e)
+        int GetNextID()
         {
-            mode = FormMode.Adding;
-            gbData.Enabled = true;
-            UnableButtons();
-            lbID.Text = GetNextID().ToString();
-            btnSave.Enabled = true;
-            btnCancel.Enabled = true;
+            var expenseList = ReadJson();
+            return expenseList.Count() + 1;
         }
         void ClearFields()
         {
@@ -93,6 +87,68 @@ namespace CONTROL_GASTOS
             dgvExpenses.DataSource = null;
             dgvExpenses.DataSource = expenseList;
         }
+        bool FieldsFilled()
+        {
+            return (!String.IsNullOrWhiteSpace(txtAmount.Text) && cmbConcept.Items.Count > 0 && cmbCategory.Items.Count > 0);
+        }
+        List<Expense> ReadJson()
+        {
+            var expenseList = new List<Expense>();
+            var json = string.Empty;
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                expenseList = JsonConvert.DeserializeObject<List<Expense>>(json);
+            }
+            return expenseList;
+        }
+        void WriteJson(List<Expense> expenseList)
+        {
+            var json = string.Empty;
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
+            json = JsonConvert.SerializeObject(expenseList);
+            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
+            sw.Write(json);
+            sw.Close();
+        }
+        void GetConcepts()
+        {
+            var json = string.Empty;
+            var conceptList = new List<Concept>();
+            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
+            if (File.Exists(pathFile))
+            {
+                json = File.ReadAllText(pathFile, Encoding.UTF8);
+                conceptList = JsonConvert.DeserializeObject<List<Concept>>(json);
+            }
+            cmbConcept.DataSource = null;
+            cmbConcept.DataSource = conceptList.FindAll(x => x.IsEnabled == true);
+            cmbConcept.DisplayMember = "Name";
+            cmbConcept.ValueMember = "Id";
+        }
+        private void btnCategoryManagement_Click(object sender, EventArgs e)
+        {
+            var obj = new CategoryManagement();
+            obj.ShowDialog();
+        }
+
+        private void btnConceptManagement_Click(object sender, EventArgs e)
+        {
+            var obj = new ConceptManagement();
+            obj.ShowDialog();
+        }
+        
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            mode = FormMode.Adding;
+            gbData.Enabled = true;
+            UnableButtons();
+            lbID.Text = GetNextID().ToString();
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+        }
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {   
             if (dgvExpenses.Rows.Count > 0)
@@ -122,31 +178,7 @@ namespace CONTROL_GASTOS
             mode = FormMode.None;
             SetInitialState();
         }
-        bool FieldsFilled()
-        {
-            return (!String.IsNullOrWhiteSpace(txtAmount.Text) && cmbConcept.Items.Count>0 && cmbCategory.Items.Count > 0);
-        }
-        List<Expense> ReadJson()
-        {
-            var expenseList = new List<Expense>();
-            var json = string.Empty;
-            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
-            if (File.Exists(pathFile))
-            {
-                json = File.ReadAllText(pathFile, Encoding.UTF8);
-                expenseList = JsonConvert.DeserializeObject<List<Expense>>(json);
-            }
-            return expenseList;
-        }
-        void WriteJson(List<Expense> expenseList)
-        {
-            var json = string.Empty;
-            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\expenses.json";
-            json = JsonConvert.SerializeObject(expenseList);
-            var sw = new StreamWriter(pathFile, false, Encoding.UTF8);
-            sw.Write(json);
-            sw.Close();
-        }
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             var expenseList = ReadJson();
@@ -227,41 +259,11 @@ namespace CONTROL_GASTOS
         {
             GetConcepts();
         }
-        void GetConcepts()
-        {
-            var json = string.Empty;
-            var conceptList = new List<Concept>();
-            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\concepts.json";
-            if (File.Exists(pathFile))
-            {
-                json = File.ReadAllText(pathFile, Encoding.UTF8);
-                conceptList = JsonConvert.DeserializeObject<List<Concept>>(json);
-            }
-            cmbConcept.DataSource = null;
-            cmbConcept.DataSource = conceptList.FindAll(x => x.IsEnabled == true);
-            cmbConcept.DisplayMember = "Name";
-            cmbConcept.ValueMember = "Id";
-        }
-        void GetCategories()
-        {
-            var json = string.Empty;
-            var categoryList = new List<Concept>();
-            var pathFile = $"{AppDomain.CurrentDomain.BaseDirectory}\\categories.json";
-            if (File.Exists(pathFile))
-            {
-                json = File.ReadAllText(pathFile, Encoding.UTF8);
-                categoryList = JsonConvert.DeserializeObject<List<Concept>>(json);
-            }
-            cmbCategory.DataSource = null;
-            cmbCategory.DataSource = categoryList.FindAll(x => x.IsEnabled == true);
-            cmbCategory.DisplayMember = "Name";
-            cmbCategory.ValueMember = "Id";
-        }
+        
         private void cmbCategory_Click(object sender, EventArgs e)
         {
             GetCategories();
         }
-
         private void dgvExpenses_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (mode == FormMode.Updating || mode == FormMode.Deleting)
