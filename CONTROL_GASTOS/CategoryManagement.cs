@@ -74,6 +74,7 @@ namespace CONTROL_GASTOS
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
             GetCategories();
+            mode = FormMode.None;
         }
 
         void GetCategories()

@@ -85,6 +85,7 @@ namespace CONTROL_GASTOS
             btnCancel.Enabled = false;
             GetExpenses();
             id = 0;
+            mode = FormMode.None;
         }
         void GetExpenses()
         {

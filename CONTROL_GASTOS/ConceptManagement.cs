@@ -54,6 +54,7 @@ namespace CONTROL_GASTOS
             btnCancel.Enabled = false;
             GetConcepts();
             id = 0;
+            mode = FormMode.None;
         }
         List<Concept> ReadJson()
         {
